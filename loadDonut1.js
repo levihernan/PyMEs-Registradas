@@ -1,61 +1,6 @@
-<!DOCTYPE html>
-<meta charset="utf-8">
-<script type="text/javascript" src="https://code.jquery.com/jquery-git.min.js">
-
-</script>
-<style>
-
-svg {
-	width: 100%;
-	height: 100%;
-  overflow: visible;
-}
-
-path.slice{
-	stroke-width:2px;
-}
-
-polyline{
-	opacity: .3;
-	stroke: black;
-	stroke-width: 2px;
-	fill: none;
-}
-
-.labelValue
-{
-	font-size: 60%;
-	opacity: .5;
-
-}
-text {
-  font: 12px sans-serif;
-}
-.donut{
-  width: 200px;
-  height: 200px;
-  margin: 100px
-}
-</style>
-
-<body>
-<form>
-<label><input type="radio" name="dataset" id="dataset" value="total" checked> Total</label>
-<label><input type="radio" name="dataset" id="dataset" value="option1"> Option 1</label>
-<label><input type="radio" name="dataset" id="dataset" value="option2"> Option 2</label>
-</form>
-
-<div class="donut" id="container">
-
-</div>
-
-<script src="http://d3js.org/d3.v3.min.js"></script>
-<script>
-
-
 d3.select("input[value=\"total\"]").property("checked", true);
 
-var svg = d3.select("#container")
+var svg = d3.select("#donut")
 	.append("svg")
 	.append("g")
 
@@ -68,8 +13,9 @@ svg.append("g")
 svg.append("g")
 	.attr("class", "lines");
 
-var width = $('#container').width(),
-    height = $('#container').height(),
+
+var width = $('#donut').width(),
+    height = $('#donut').height(),
 	radius = Math.min(width, height) / 2;
 
 var pie = d3.layout.pie()
@@ -269,6 +215,3 @@ function change(data) {
     polyline.exit()
         .remove();
 };
-
-</script>
-</body>

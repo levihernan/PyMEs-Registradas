@@ -1,9 +1,17 @@
-<link rel="stylesheet" href="http://www.produccion.gob.ar/wp-content/uploads/2016/11/roboto-fontface.css">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <link rel="stylesheet" href="http://www.produccion.gob.ar/wp-content/uploads/2016/11/roboto-fontface.css">
 <link rel="stylesheet" href="http://www.produccion.gob.ar/wp-content/uploads/2016/11/font-awesome.min.css">
+<link rel="stylesheet" href="css/donuts.css">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 <!--D3.JS-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.js"></script>
-<script type="text/javascript" src="http://www.produccion.gob.ar/wp-content/uploads/2016/12/loadMap.js"></script>
 
 <style type="text/css">
 @import url('https://fonts.googleapis.com/css?family=Roboto');
@@ -275,6 +283,12 @@ ul.checked-3 li::before {color: #008ccc;}
           <div class="col-md-8 m-b-3 text-sm-center">
               <h1 style="text-align:center; font-size:36px; margin-bottom: 20px; color: #666;">DATOS</h1>
 
+              <form>
+              <label><input type="radio" name="dataset" id="dataset" value="total" checked> Total</label>
+              <label><input type="radio" name="dataset" id="dataset" value="option1"> Option 1</label>
+              <label><input type="radio" name="dataset" id="dataset" value="option2"> Option 2</label>
+              </form>
+
               <div class="col-md-6 m-b-3">
                 <div target="_blank"  href="#" class="back-blanco">
                 <div class="col-md-4 col-md-offset-4 col-xs-4 col-xs-offset-4">
@@ -287,28 +301,28 @@ ul.checked-3 li::before {color: #008ccc;}
               </div>
               </div>
 
-              <div class="col-md-6 m-b-3" id="grafico1">
-                  
+              <div class="col-md-6 m-b-3 donut-container back-blanco" id="donut">
+
 
 
               </div>
 
 
 
-              <div class="col-md-6 m-b-3" id="grafico2">
+              <div class="col-md-6 m-b-3 donut-container back-blanco" id="donut2">
 
               </div>
 
 
 
-              <div class="col-md-6 m-b-3" id="grafico3">
+              <div class="col-md-6 m-b-3 donut-container back-blanco" id="donut3">
 
               </div>
 
 
           </div>
 
-          
+
           <div class="col-md-4 m-b-3" id="map">
 
           </div>
@@ -324,3 +338,11 @@ ul.checked-3 li::before {color: #008ccc;}
 
 <script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
 crossorigin="anonymous"></script>
+<!-- <script type="text/javascript" src="http://www.produccion.gob.ar/wp-content/uploads/2016/12/loadMap.js"></script> -->
+<script type="text/javascript" src="loadMap.js"></script>
+<script type="text/javascript" src="loadDonut1.js"></script>
+<script type="text/javascript" src="loadDonut2.js"></script>
+<script type="text/javascript" src="loadDonut3.js"></script>
+
+</body>
+</html>

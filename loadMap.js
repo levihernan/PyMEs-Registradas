@@ -1,14 +1,14 @@
 //Map dimensions (in pixels)
-console.log("New file");
-var width = 1000,
-    height = 800;
+console.log("drawing map");
+var width = $('#map').width(),
+    height = 500;
 
 //Map projection
 var projection = d3.geo.transverseMercator()
                        .center([2.5, -38.5])
                        .rotate([66, 0])
                        .scale((height * 56.5) / 33)
-                       .translate([(width / 2), (height / 2)]);
+                       .translate([(width/2), (height / 2)]);
 
 //Generate paths based on projection
 var path = d3.geo.path()
@@ -36,8 +36,8 @@ var color = d3.scale.quantize()
 
 
 
-d3.json("http://www.produccion.gob.ar/wp-content/uploads/2016/12/argentina.geojson",function(error,geodata) {
-// d3.json("argentina.geojson",function(error,geodata) {
+// d3.json("http://www.produccion.gob.ar/wp-content/uploads/2016/12/argentina.geojson",function(error,geodata) {
+d3.json("argentina.geojson",function(error,geodata) {
   if (error) return console.log(" error viejaaaa"); //unknown error, check the console
 
   //Create a path for each map feature in the data
@@ -49,23 +49,23 @@ d3.json("http://www.produccion.gob.ar/wp-content/uploads/2016/12/argentina.geojs
     .attr("style", "fill:rgb(49, 130, 189)")
     .on("mouseover",function(d){
 
-    	
+
     	hoveredPath = d3.select(this);
 
     	// if(d.properties.FID === 1){
     		showTooltip(d);
     		hoveredPath.style('fill','rgb(32, 94, 140)');
-    		
+
     		// $scope.$apply(function() {  //Sin este apply la actualizacion de estadoData no se refleja en el ng-repeat del panel de abajo
 	    	// 	$scope.estado.id = selectState(d.properties.name.toString())-1;  //Resto uno. Recordar que esta desfazado el nuero del TAB con el objeto Datos
 	    	// 	$scope.estado.name = d.properties.name.toString();
 	    	// 	//if($scope.estado.id = 4){$scope.estado.name = "Ciudad de México"};
-	    		
+
 	    	// 	$scope.width = "calc(100%/$scope.estado.data["+$scope.estado.id+"].length)";
-	    		
+
     		// });
-    				    	
-    		
+
+
     	// }
     })
     .on("mousemove",moveTooltip)
@@ -73,9 +73,9 @@ d3.json("http://www.produccion.gob.ar/wp-content/uploads/2016/12/argentina.geojs
 
     	hideTooltip();
     	hoveredPath = d3.select(this);
-    	
+
     	// if(d.properties.FID === 1){
-    		hoveredPath.style('fill','rgb(49, 130, 189)');			    	
+    		hoveredPath.style('fill','rgb(49, 130, 189)');
     	// }
     })
     .on("click",clicked);
@@ -85,7 +85,7 @@ d3.json("http://www.produccion.gob.ar/wp-content/uploads/2016/12/argentina.geojs
 
 // Add optional onClick events for features here
 // d.properties contains the attributes (e.g. d.properties.name, d.properties.population)
-function clicked(d,i) {			
+function clicked(d,i) {
 
 }
 
