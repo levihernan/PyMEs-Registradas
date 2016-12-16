@@ -43,48 +43,8 @@ var colorRange = d3.scale.category20();
 var color = d3.scale.ordinal()
 	.range(colorRange.range());
 
-var jujuy_size = [
-  {label:"Pequeña", value:21.4},
-  {label:"MT1", value:6},
-  {label:"MT2", value:0.1},
-  {label:"Micro", value:72.5}
-];
 
-var cordoba_size = [
-  {label:"Pequeña", value:25.4},
-  {label:"MT1", value:5},
-  {label:"MT2", value:0.8},
-  {label:"Micro", value:52.5}
-];
-
-datasetTotal = [
-		{label:"Category 1", value:19},
-        {label:"Category 2", value:5},
-        {label:"Category 3", value:13},
-        {label:"Category 4", value:17},
-        {label:"Category 5", value:19},
-        {label:"Category 6", value:27}
-        ];
-
-datasetOption1 = [
-		{label:"Category 1", value:22},
-        {label:"Category 2", value:33},
-        {label:"Category 3", value:4},
-        {label:"Category 4", value:15},
-        {label:"Category 5", value:36},
-        {label:"Category 6", value:0}
-        ];
-
-datasetOption2 = [
-		{label:"Category 1", value:10},
-        {label:"Category 2", value:20},
-        {label:"Category 3", value:30},
-        {label:"Category 4", value:5},
-        {label:"Category 5", value:12},
-        {label:"Category 6", value:23}
-        ];
-
-change(jujuy_size);
+change(jujuy.empleador);
 
 
 d3.selectAll("input")
@@ -95,15 +55,15 @@ function selectDataset()
 	var value = this.value;
 	if (value == "total")
 	{
-		change(jujuy_size);
+		change(jujuy.empleador);
 	}
 	else if (value == "option1")
 	{
-		change(cordoba_size);
+		change(cordoba.empleador);
 	}
 	else if (value == "option2")
 	{
-		change(jujuy_size);
+		change(jujuy.empleador);
 	}
 }
 
