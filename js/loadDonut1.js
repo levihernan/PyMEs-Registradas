@@ -14,9 +14,9 @@ svg.append("g")
 	.attr("class", "lines");
 
 
-var width = $('#donut').width(),
+		width = $('#donut').width(),
     height = $('#donut').height(),
-	radius = Math.min(width, height) / 2;
+	radius = Math.min(width, height) / 2.75;
 
 var pie = d3.layout.pie()
 	.sort(null)
@@ -30,7 +30,7 @@ var arc = d3.svg.arc()
 
 var outerArc = d3.svg.arc()
 	.innerRadius(radius * 0.9)
-	.outerRadius(radius * 0.9);
+	.outerRadius(radius * 1);
 
 var legendRectSize = (radius * 0.05);
 var legendSpacing = radius * 0.02;

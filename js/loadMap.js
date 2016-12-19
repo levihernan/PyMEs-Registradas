@@ -36,8 +36,8 @@ var color = d3.scale.quantize()
 
 
 
-// d3.json("http://www.produccion.gob.ar/wp-content/uploads/2016/12/argentina.geojson",function(error,geodata) {
-d3.json("js/argentina.geojson",function(error,geodata) {
+d3.json("http://www.produccion.gob.ar/wp-content/uploads/2016/12/registropymes/js/argentina.geojson",function(error,geodata) {
+// d3.json("js/argentina.geojson",function(error,geodata) {
   if (error) return console.log(" error viejaaaa"); //unknown error, check the console
 
   //Create a path for each map feature in the data
@@ -56,7 +56,7 @@ d3.json("js/argentina.geojson",function(error,geodata) {
     	// if(d.properties.FID === 1){
     		// showTooltip(d);
     		hoveredPath.style('fill','rgb(32, 94, 140)');
-        
+
         provincia = d.properties.provincia.toLowerCase().replaceAll(" ","_");
         console.log(provincia);
 
