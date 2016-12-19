@@ -46,15 +46,22 @@ d3.json("js/argentina.geojson",function(error,geodata) {
     .enter()
     .append("path")
     .attr("d",path)
-    .attr("style", "fill:rgb(49, 130, 189)")
+    .attr("style", "fill:rgb(49, 130, 189);cursor:pointer;")
     .on("mouseover",function(d){
 
 
     	hoveredPath = d3.select(this);
+      console.log(hoveredPath);
 
     	// if(d.properties.FID === 1){
-    		showTooltip(d);
+    		// showTooltip(d);
     		hoveredPath.style('fill','rgb(32, 94, 140)');
+        
+        provincia = d.properties.provincia.toLowerCase().replaceAll(" ","_");
+        console.log(provincia);
+
+        //Uso el objeto grande y mando la variable string que sale de arriba como selector o provincia_data.provincia
+        changeDonuts(provincias_data[provincia]);
 
     		// $scope.$apply(function() {  //Sin este apply la actualizacion de estadoData no se refleja en el ng-repeat del panel de abajo
 	    	// 	$scope.estado.id = selectState(d.properties.name.toString())-1;  //Resto uno. Recordar que esta desfazado el nuero del TAB con el objeto Datos
@@ -111,3 +118,9 @@ function moveTooltip() {
 function hideTooltip() {
   tooltip.style("display","none");
 }
+
+
+String.prototype.replaceAll = function(search, replacement) {
+    var target = this;
+    return target.replace(new RegExp(search, 'g'), replacement);
+};

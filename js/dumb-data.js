@@ -49,3 +49,5 @@ var cordoba = {
     pymes_por: 0.5
   }
 };
+
+var provincias_data = {cordoba: cordoba, jujuy: jujuy};
