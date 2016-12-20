@@ -49,19 +49,19 @@ d3.json("http://www.produccion.gob.ar/wp-content/uploads/2016/12/registropymes/j
     .attr("style", "fill:rgb(49, 130, 189);cursor:pointer;")
     .on("mouseover",function(d){
 
-
-    	hoveredPath = d3.select(this);
+      hoveredPath = d3.select(this);
       console.log(hoveredPath);
+      pos = hoveredPath[0][0].getBoundingClientRect();
+      console.log("posTop: "+ pos.top);
+      console.log("posLeft: "+ pos.left);
+      showTooltip(d,pos);
+      hoveredPath.style('fill','rgb(32, 94, 140)');
+      
+      provincia = d.properties.provincia.toLowerCase().replaceAll(" ","_");
+      console.log(provincia);
 
-    	// if(d.properties.FID === 1){
-    		// showTooltip(d);
-    		hoveredPath.style('fill','rgb(32, 94, 140)');
-
-        provincia = d.properties.provincia.toLowerCase().replaceAll(" ","_");
-        console.log(provincia);
-
-        //Uso el objeto grande y mando la variable string que sale de arriba como selector o provincia_data.provincia
-        changeDonuts(provincias_data[provincia]);
+      //Uso el objeto grande y mando la variable string que sale de arriba como selector o provincia_data.provincia
+      changeDonuts(provincias_data[provincia]);
 
     		// $scope.$apply(function() {  //Sin este apply la actualizacion de estadoData no se refleja en el ng-repeat del panel de abajo
 	    	// 	$scope.estado.id = selectState(d.properties.name.toString())-1;  //Resto uno. Recordar que esta desfazado el nuero del TAB con el objeto Datos
@@ -75,15 +75,15 @@ d3.json("http://www.produccion.gob.ar/wp-content/uploads/2016/12/registropymes/j
 
     	// }
     })
-    .on("mousemove",moveTooltip)
+    .on("mousemove", function(d){
+      // moveTooltip();
+
+    })
     .on("mouseout",function(d){
 
-    	hideTooltip();
-    	hoveredPath = d3.select(this);
-
-    	// if(d.properties.FID === 1){
-    		hoveredPath.style('fill','rgb(49, 130, 189)');
-    	// }
+      hideTooltip();
+      hoveredPath = d3.select(this);
+      hoveredPath.style('fill','rgb(49, 130, 189)');
     })
     .on("click",clicked);
 
@@ -109,9 +109,14 @@ function showTooltip(d) {
 
 //Move the tooltip to track the mouse
 function moveTooltip() {
+  console.log("Inside showTooltip");
+  console.log(pos.top);
+  console.log(pos.left);
 
- 	tooltip.style("top",(d3.mouse(document.body)[1]+tooltipOffset.y)+"px")
-      .style("left",(d3.mouse(document.body)[0]+tooltipOffset.x)+"px");
+  tooltip.style("display","block")
+      .text(d.properties.provincia);
+  tooltip.style("top",(pos.top+tooltipOffset.y)+"px")
+     .style("left",(pos.left+tooltipOffset.x)+"px");
 }
 
 //Create a tooltip, hidden at the start
