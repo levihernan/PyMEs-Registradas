@@ -19,7 +19,7 @@ var tooltip = d3.select("#map").append("div").attr("class","tooltipMap");
 
 //Create an SVG
 var svg = d3.select("#map").append("svg")
-	.attr("id","svg0")
+  .attr("id","svg0")
    .attr("width", width)
    .attr("height", height);
     // .attr("viewBox", "0 0 600 378")
@@ -47,13 +47,19 @@ d3.json("js/argentina.geojson",function(error,geodata) {
     .append("path")
     .attr("d",path)
     .attr("style", "fill:rgb(49, 130, 189);cursor:pointer;")
+
     .on("mouseover",function(d){
+
+      console.log("data is");
+      console.log(d);
 
       hoveredPath = d3.select(this);
       console.log(hoveredPath);
+
       pos = hoveredPath[0][0].getBoundingClientRect();
       console.log("posTop: "+ pos.top);
       console.log("posLeft: "+ pos.left);
+
       showTooltip(d,pos);
       hoveredPath.style('fill','rgb(32, 94, 140)');
       
@@ -63,17 +69,6 @@ d3.json("js/argentina.geojson",function(error,geodata) {
       //Uso el objeto grande y mando la variable string que sale de arriba como selector o provincia_data.provincia
       changeDonuts(provincias_data[provincia]);
 
-    		// $scope.$apply(function() {  //Sin este apply la actualizacion de estadoData no se refleja en el ng-repeat del panel de abajo
-	    	// 	$scope.estado.id = selectState(d.properties.name.toString())-1;  //Resto uno. Recordar que esta desfazado el nuero del TAB con el objeto Datos
-	    	// 	$scope.estado.name = d.properties.name.toString();
-	    	// 	//if($scope.estado.id = 4){$scope.estado.name = "Ciudad de México"};
-
-	    	// 	$scope.width = "calc(100%/$scope.estado.data["+$scope.estado.id+"].length)";
-
-    		// });
-
-
-    	// }
     })
     .on("mousemove", function(d){
       // moveTooltip();
@@ -89,39 +84,39 @@ d3.json("js/argentina.geojson",function(error,geodata) {
 
 });
 
-
-// Add optional onClick events for features here
-// d.properties contains the attributes (e.g. d.properties.name, d.properties.population)
-function clicked(d,i) {
-
-}
-
 //Position of the tooltip relative to the cursor
-var tooltipOffset = {x: -136, y: -290};
+var tooltipOffset = {x: -790, y: -135};
 
 //Create a tooltip, hidden at the start
-function showTooltip(d) {
-  moveTooltip();
-
+function showTooltip(d,pos) {
+  // moveTooltip(d,pos);
+  console.log(d.properties.provincia);
   tooltip.style("display","block")
-      .text(d.properties.name);
+      .text(d.properties.provincia);
+
+  tooltip.style("top",(pos.top+tooltipOffset.y)+"px")
+     .style("left",(pos.left+tooltipOffset.x)+"px");
+
 }
 
 //Move the tooltip to track the mouse
-function moveTooltip() {
+function moveTooltip(d,pos) {
   console.log("Inside showTooltip");
   console.log(pos.top);
   console.log(pos.left);
-
-  tooltip.style("display","block")
-      .text(d.properties.provincia);
-  tooltip.style("top",(pos.top+tooltipOffset.y)+"px")
-     .style("left",(pos.left+tooltipOffset.x)+"px");
 }
 
 //Create a tooltip, hidden at the start
 function hideTooltip() {
   tooltip.style("display","none");
+}
+
+
+
+// Add optional onClick events for features here
+// d.properties contains the attributes (e.g. d.properties.name, d.properties.population)
+function clicked(d,i) {
+
 }
 
 

@@ -33,3 +33,14 @@ text {
   height: 200px;
   margin: 100px
 }
+
+div.tooltipMap {
+  position: absolute;
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  font-weight: bold;
+  padding: 4px 8px;
+  display: none;
+  opacity:1;
+}
