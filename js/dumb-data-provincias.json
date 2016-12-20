@@ -3,6 +3,7 @@
  "children": [
   {
    "name": "Buenos Aires",
+   "size":100,
    "children": [
     {"name": "Muni1", "size": 50},
     {"name": "Muni2", "size": 60},
@@ -18,6 +19,7 @@
   },
   {
    "name": "Cordoba",
+   "size": 95,
    "children": [
     {"name": "Muni1", "size": 50},
     {"name": "Muni2", "size": 60},
@@ -30,6 +32,7 @@
   },
   {
    "name": "Catamarca",
+   "size":70,
    "children": [
     {"name": "Muni1", "size": 50},
     {"name": "Muni2", "size": 60},
@@ -43,6 +46,7 @@
   },
   {
    "name": "Chaco",
+   "size":55,
    "children": [
     {"name": "Muni5", "size": 60},
     {"name": "Muni6", "size": 80},
@@ -55,6 +59,7 @@
   },
   {
    "name": "Chubut",
+   "size":80,
    "children": [
     {"name": "Muni1", "size": 50},
     {"name": "Muni2", "size": 60},
@@ -68,16 +73,9 @@
   },
   {
    "name": "Corrientes",
+   "size":70,
    "children": [
-    {"name": "Muni1", "size": 50},
-    {"name": "Muni2", "size": 60},
-    {"name": "Muni3", "size": 75},
-    {"name": "Muni4", "size": 46},
-    {"name": "Muni5", "size": 60},
-    {"name": "Muni6", "size": 80},
-    {"name": "Muni9", "size": 25},
-    {"name": "Muni10", "size": 45},
-    {"name": "Muni11", "size": 50}
+    {"name": "Muni1", "size": 100}
    ]
   }
    ]
