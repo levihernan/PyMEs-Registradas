@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('http://www.produccion.gob.ar/wp-content/uploads/ponchix/fonts/FontAwesome.woff')
+@font-face {
+    font-family: gotham;
+    src: url(http://www.produccion.gob.ar/wp-content/uploads/2016/11/semanapyme/Gotham-Medium.otf);
+}
+body{
+  color: #666 !important
+}
+.jumbotron{
+  background-size: cover;
+    background-position: 50%;
+    padding: 0 !important;
+    border-radius: 0 !important
+}
+.gradient{
+    background: linear-gradient(to top right, rgba(51,122,183,0.7), rgba(0,0,0,0));
+    padding-bottom: 15px;
+    height: 100%;
+    width: 100%;
+}
+.jumbotron h1{
+  margin-bottom: 0;
+  margin-top: 200px;
+  text-align: left;
+  text-shadow: 2px 2px 20px #000;
+}
+.jumbotron h3{
+  text-align: left;
+  text-shadow: 2px 2px 20px #000;
+}
+.back-blanco h4{
+  font-weight:bold;
+  text-align: center;
+}
+h1{
+  font-size:50px;
+  font-weight:bold;
+  text-transform: uppercase;
+}
+h2{
+  font-size: 30px;
+  font-weight: bold;
+  color: #666;
+}
+h3{
+  font-size: 26px;
+}
+h4{
+  /*text-align: center;*/
+  margin-top: 20px;
+}
+p li{
+  font-size: 14px
+}
+.uppercase{
+  text-transform: uppercase;
+}
+.row hr {
+    border-color: #666;
+    border-width: 2px;
+    width: 75px;
+    margin-top: 0px !important;
+}
+.back-blanco{
+  background: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  display: inline-block;
+  transition: all ease 0.15s;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #666;
+}
+.back-blanco:hover{
+  background: #0695d6;
+  color: #fff !important
+}
+.back-foto{
+  border-bottom: solid 2px;
+  display: inline-block;
+}
+.back-container{
+  padding: 0 !important;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 120px;
+  background-size: cover !important;
+}
+.icon-image{
+  height: 70px;
+  margin: 10px;
+  font-size: 35px;
+}
+.fa-stack-1x{
+  /*font-size: 1.5em !important*/
+}
+#main-column .page {
+  max-width: 100% !important;
+}
+main {
+  background: #f0f0f0;
+}
+.container{
+  max-width: 100%;
+}
+.page-container{
+  width: 100% !important;
+}
+#main-column{
+  padding: 0 0 !important;
+}
+img.img-responsive {
+  min-height: auto !important;
+}
+.panel-heading{
+  background-image: none !important;
+  text-align: center;
+  margin-top: 20px;
+}
+.panel{
+  border: 0px !important;
+}
+.panel-body{
+  min-height: 210px;
+}
+article {
+  padding: 0 !important;
+}
+section {
+  padding: 60px 0;
+}
+.text-white {color:#fff;}
+img.img-bloque {
+  margin-top: -150px;
+  margin-bottom: 20px;
+  }
+img.icono {
+  width: 60px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  }
+.panel-icon .panel-heading i {padding: 15px 0;}
+ul.checked li {list-style: none; margin-top: 7px;}
+ul.checked li::before {
+  font-family: 'FontAwesome';
+  content: '\f00c';
+  margin: 0px 10px 0 -30px;
+  }
+ul.checked-1 li::before {color: #006293;}
+ul.checked-2 li::before {color: #0072b7;}
+ul.checked-3 li::before {color: #008ccc;}
+.social [class*="fa fa-"] {
+  border-radius: 50%;
+  color: #fff;
+  display: inline-block;
+  height: 80px;
+  line-height: 80px;
+  margin: 20px 15px;
+  width: 80px;
+  font-size: 40px;
+  text-align: center;
+  }
+#fa-facebook {background-color: #0072b7;}
+#fa-facebook:hover {background-color: #006293;}
+#fa-twitter {background-color: #00bcf1;}
+#fa-twitter:hover {background-color: #05acd3;}
+
+@media screen and (min-width: 768px) {
+  .jumbotron .jumbotron_body h1 {
+    font-size: 40px;
+    }
+  }
+@media screen and (max-width: 768px) {
+  img.img-bloque {
+    margin-top: -130px;
+    width: 150px;
+    }
+  .img-responsive {
+    margin: 0 auto 20px auto;
+    }
+  .panels-row>div {
+    width: 100%;
+    }
+  .panel-body {
+    padding: 15px 5px;
+    }
+  #titulo-jumbo {
+    font-size: 2em !important;
+  }
+  .googleMap{
+    display: none;
+  }
+  }
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .panel-body {
+    padding: 15px 5px;
+    }
+  }
+
+@media (min-width: 768px) {
+  .panels-row {
+    flex-wrap: nowrap;
+    }
+  }
+
+.form-group .btn-primary{
+  margin: 0px !important;
+}
