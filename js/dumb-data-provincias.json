@@ -1,0 +1,84 @@
+{
+ "name": "flare",
+ "children": [
+  {
+   "name": "Buenos Aires",
+   "children": [
+    {"name": "Muni1", "size": 50},
+    {"name": "Muni2", "size": 60},
+    {"name": "Muni3", "size": 75},
+    {"name": "Muni4", "size": 46},
+    {"name": "Muni5", "size": 60},
+    {"name": "Muni7", "size": 50},
+    {"name": "Muni8", "size": 30},
+    {"name": "Muni9", "size": 25},
+    {"name": "Muni10", "size": 45},
+    {"name": "Muni11", "size": 50}
+   ]
+  },
+  {
+   "name": "Cordoba",
+   "children": [
+    {"name": "Muni1", "size": 50},
+    {"name": "Muni2", "size": 60},
+    {"name": "Muni3", "size": 75},
+    {"name": "Muni4", "size": 46},
+    {"name": "Muni5", "size": 60},
+    {"name": "Muni10", "size": 45},
+    {"name": "Muni11", "size": 50}
+   ]
+  },
+  {
+   "name": "Catamarca",
+   "children": [
+    {"name": "Muni1", "size": 50},
+    {"name": "Muni2", "size": 60},
+    {"name": "Muni3", "size": 75},
+    {"name": "Muni4", "size": 46},
+    {"name": "Muni5", "size": 60},
+    {"name": "Muni6", "size": 80},
+    {"name": "Muni7", "size": 50},
+    {"name": "Muni11", "size": 50}
+   ]
+  },
+  {
+   "name": "Chaco",
+   "children": [
+    {"name": "Muni5", "size": 60},
+    {"name": "Muni6", "size": 80},
+    {"name": "Muni7", "size": 50},
+    {"name": "Muni8", "size": 30},
+    {"name": "Muni9", "size": 25},
+    {"name": "Muni10", "size": 45},
+    {"name": "Muni11", "size": 50}
+   ]
+  },
+  {
+   "name": "Chubut",
+   "children": [
+    {"name": "Muni1", "size": 50},
+    {"name": "Muni2", "size": 60},
+    {"name": "Muni3", "size": 75},
+    {"name": "Muni4", "size": 46},
+    {"name": "Muni8", "size": 30},
+    {"name": "Muni9", "size": 25},
+    {"name": "Muni10", "size": 45},
+    {"name": "Muni11", "size": 50}
+   ]
+  },
+  {
+   "name": "Corrientes",
+   "children": [
+    {"name": "Muni1", "size": 50},
+    {"name": "Muni2", "size": 60},
+    {"name": "Muni3", "size": 75},
+    {"name": "Muni4", "size": 46},
+    {"name": "Muni5", "size": 60},
+    {"name": "Muni6", "size": 80},
+    {"name": "Muni9", "size": 25},
+    {"name": "Muni10", "size": 45},
+    {"name": "Muni11", "size": 50}
+   ]
+  }
+   ]
+  }
