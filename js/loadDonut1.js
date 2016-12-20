@@ -1,6 +1,6 @@
 d3.select("input[value=\"total\"]").property("checked", true);
 
-var svg = d3.select("#donut")
+var svg = d3.select("#donut1")
 	.append("svg")
 	.append("g")
 
@@ -14,8 +14,8 @@ svg.append("g")
 	.attr("class", "lines");
 
 
-		width = $('#donut').width(),
-    height = $('#donut').height(),
+		width = $('#donut1').width(),
+    height = $('#donut1').height(),
 	radius = Math.min(width, height) / 2.75;
 
 var pie = d3.layout.pie()
@@ -29,8 +29,8 @@ var arc = d3.svg.arc()
 	.innerRadius(radius * 0.4);
 
 var outerArc = d3.svg.arc()
-	.innerRadius(radius * 0.9)
-	.outerRadius(radius * 1);
+	.innerRadius(radius * .8)
+	.outerRadius(radius * 1.4);
 
 var legendRectSize = (radius * 0.05);
 var legendSpacing = radius * 0.02;

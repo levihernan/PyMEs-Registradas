@@ -1,262 +1,95 @@
 <link rel="stylesheet" href="http://www.produccion.gob.ar/wp-content/uploads/2016/11/roboto-fontface.css">
-<link rel="stylesheet" href="http://www.produccion.gob.ar/wp-content/uploads/2016/11/font-awesome.min.css">
+<link rel="stylesheet" href="http://www.produccion.gob.ar/wp-content/uploads/2016/12/registropymes/css/font-awesome.css">
 <link rel="stylesheet" href="http://www.produccion.gob.ar/wp-content/uploads/2016/12/registropymes/css/donuts.css">
+<link rel="stylesheet" href="http://www.produccion.gob.ar/wp-content/uploads/2016/12/registropymes/css/ponchix.css">
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 <!--D3.JS-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.js"></script>
 
-<style type="text/css">
-@import url('https://fonts.googleapis.com/css?family=Roboto');
-@font-face {
-    font-family: gotham;
-    src: url(http://www.produccion.gob.ar/wp-content/uploads/2016/11/semanapyme/Gotham-Medium.otf);
-}
-.back-blanco{
-  background: #fff;
-  border-radius: 5px;
-  padding: 10px;
-  display: inline-block;
-  transition: all ease 0.15s;
-  margin-top: 20px;
-  text-decoration: none;
-  color: #666;
-}
-.donut-container{
-  height: 300px;
-}
-#map{
-  padding: 20px 60px;
-}
-#pie-chart{
-  width: 100%
-}
-img.img-responsive {
-  min-height: 0 !important;
-}
-.back-blanco:hover{
-  background: #0695d6;
-  color: #fff !important
-}
-.container{
-  width: 100% !important;
-}
-#main-column .page {
-  max-width: 100% !important;
-}
-h2{
-  font-size: 20px !important;
-}
-h4{
-  text-align: center;
-  margin-top: 20px;
-}
-.jumbotron{
-  background-size: cover;
-    background-position: 50%;
-}
-main {
-  background: #f0f0f0;
-}
-img.img-responsive {
-  min-height: auto !important;
-}
-#botonera{
-  margin-bottom: 70px;
-}
-.panel-heading{
-  background-image: none !important;
-  text-align: center;
-}
-.panel{
-  border: 0px !important;
-}
-.panel-body{
-  min-height: 210px;
-}
-article {
-  padding: 0 !important;
-}
-
-.navbar-inverse .nav > li > a {
-  color: #fff;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 30px;
-  padding-bottom: 20px;
-  padding-top: 22px;
-  text-transform: uppercase; }
-.navbar-inverse .navbar-brand {
-  color: #fff; }
-  .navbar-inverse .navbar-brand:hover {
-    color: #fff; }
-.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
-  background: #fff;
-  color: #0695d6; }
-.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus,
-.navbar-inverse .navbar-nav > .open > a,
-.navbar-inverse .navbar-nav > .open > a:hover,
-.navbar-inverse .navbar-nav > .open > a:focus {
-  background: #fff;
-  color: #0695d6; }
-.navbar-inverse .navbar-nav > .btn {
-  margin: 13px 0 0 13px;
-  padding: 12px 15px; }
-.navbar-inverse .navbar-nav > .btn-group > .btn:first-child {
-  margin-left: 13px; }
-.navbar-inverse .glyphicon-search {
-  font-size: 20px;
-  top: 4px; }
-.navbar-inverse .navbar-collapse,
-.navbar-inverse .navbar-form {
-  border: 0; }
-.navbar-inverse .navbar-toggle {
-  border-color: transparent; }
-  .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
-    background-color: #0695d6; }
-    .navbar-inverse .navbar-toggle:hover .icon-bar, .navbar-inverse .navbar-toggle:focus .icon-bar {
-      background-color: #fff; }
-
-
-section {padding: 60px 0;}
-.text-white {color:#fff;}
-img.img-bloque {
-  margin-top: -150px;
-  margin-bottom: 20px;
-  }
-img.icono {
-  width: 60px;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  }
-.panel-icon .panel-heading i {padding: 15px 0;}
-ul.checked li {list-style: none; margin-top: 7px;}
-ul.checked li::before {
-  font-family: 'FontAwesome';
-  content: '\f00c';
-  margin: 0px 10px 0 -30px;
-  }
-ul.checked-1 li::before {color: #006293;}
-ul.checked-2 li::before {color: #0072b7;}
-ul.checked-3 li::before {color: #008ccc;}
-.social [class*="fa fa-"] {
-  border-radius: 50%;
-  color: #fff;
-  display: inline-block;
-  height: 80px;
-  line-height: 80px;
-  margin: 20px 15px;
-  width: 80px;
-  font-size: 40px;
-  text-align: center;
-  }
-#fa-facebook {background-color: #0072b7;}
-#fa-facebook:hover {background-color: #006293;}
-#fa-twitter {background-color: #00bcf1;}
-#fa-twitter:hover {background-color: #05acd3;}
-
-@media screen and (min-width: 768px) {
-  .jumbotron .jumbotron_body h1 {
-    font-size: 40px;
-    }
-  }
-@media screen and (max-width: 768px) {
-  img.img-bloque {
-    margin-top: -130px;
-    width: 150px;
-    }
-  .img-responsive {
-    margin: 0 auto 20px auto;
-    }
-  .panels-row>div {
-    width: 100%;
-    }
-  .panel-body {
-    padding: 15px 5px;
-    }
-  #titulo-jumbo {
-    font-size: 2em !important;
-  }
-  iframe{
-    display: none;
-  }
-  }
-
-@media screen and (min-width: 768px) and (max-width: 1200px) {
-  .panel-body {
-    padding: 15px 5px;
-    }
-  }
-
-@media (min-width: 768px) {
-  .panels-row {
-    flex-wrap: nowrap;
-    }
-  }
-
-.form-group .btn-primary{
-  margin: 0px !important;
-}
-</style>
 
 <main role="main" style="font-family: Roboto !important">
-  <section class="jumbotron" style="background-image: url('http://www.produccion.gob.ar/wp-content/uploads/2016/02/photo-1418224829731-3ed692c2caff.jpg');">
+  <section class="jumbotron" style="background-image: url('http://www.produccion.gob.ar/wp-content/uploads/2016/12/registropymes/background.jpg');">
+<div class="gradient">
+
     <div class="jumbotron_body">
       <div class="container">
         <div class="row">
-          <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 text-center">
-            <h1 class="m-b-2" id="titulo-jumbo" style="letter-spacing:0.02em; color:#fff; font-size:50px; font-weight:bold; line-height:25px; margin: 70px 0; text-shadow: 2px 2px 20px #000;">10.000 PyMEs Registradas</h1>
-            <h3 style="color:#fff;text-shadow: 2px 2px 20px #000;">SUBTITULO</h3>
+          <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 text-center">
+            <h1 class="m-b-2" id="titulo-jumbo" style="color:#fff"><span><strong>10.000 PyMEs</strong><br>Registradas</span>&nbsp;</h1>
+            <h3 style="color:#fff">SUBTITULO</h3>
           </div>
         </div>
       </div>
     </div>
+  </div>
     <div class="overlay"></div>
 
 
   </section>
   <div class="row">
     <div class="col-md-8 col-md-offset-2 text-center">
-      <h1 class="text-primary m-b-2" style="font-size:36px; margin-bottom:20px; color:#666">Al registrarte podés acceder a estos beneficios:</h1>
+      <h2 class="m-b-2" style="font-weight:bold; color:#F29E1E">BENEFICIOS</h2>
+      <hr>
       <ul style="list-style: none;">
         <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
-        <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
       </ul>
-  <section id="botonera" style="padding-top:0" class="m-t-2 m-b-3">
+  <section style="padding-top:0" class="m-t-2 m-b-3">
     <div class="container">
 
       <div class="row m-t-2 text-sm-center">
-        <div class="col-md-4 m-b-3">
-          <div target="_blank"  href="#" class="back-blanco">
-          <div class="col-md-4 col-md-offset-4 col-xs-4 col-xs-offset-4">
-            <img class="img-responsive" alt="" src="http://www.produccion.gob.ar/wp-content/uploads/2016/12/icon.png">
+        <div class="col-md-4 m-b-3 text-sm-left">
+          <div class="back-foto" style="border-color:#F29F1F">
+
+          <div class="col-md-12 col-md-offset-0 back-container" style="background: url('http://www.produccion.gob.ar/wp-content/uploads/2016/12/registropymes/background.jpg')">
+            <div class="gradient text-left">
+              <img class="icon-image" src="http://www.produccion.gob.ar/wp-content/uploads/2016/12/registropymes/img/icon1.png" alt="">
+              <!-- <span class="fa-stack fa-lg icon-image">
+                <i class="fa fa-circle fa-stack-2x" style="color:#F29F1F"></i>
+                <i class="fa fa-clock-o fa-stack-1x" style="color:#fff"></i>
+              </span> -->
+            </div>
           </div>
           <div class="col-md-12 col-md-offset-0 col-xs-12 col-xs-offset-0 text-left">
-            <strong><h4 style="font-weight:bold; text-align: center;">Pago de IVA a 90 días</h4></strong>
+            <h4 class="uppercase"><strong>Pago de IVA a 90 días</strong></h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           </div>
         </div>
         </div>
 
-        <div class="col-md-4 m-b-3">
-          <div target="_blank"  href="#" class="back-blanco">
-          <div class="col-md-4 col-md-offset-4 col-xs-4 col-xs-offset-4">
-            <img class="img-responsive" alt="" src="http://www.produccion.gob.ar/wp-content/uploads/2016/12/icon.png">
+        <div class="col-md-4 m-b-3 text-sm-left">
+          <div class="back-foto" style="border-color:#3BB8E6">
+
+          <div class="col-md-12 col-md-offset-0 back-container" style="background: url('http://www.produccion.gob.ar/wp-content/uploads/2016/12/registropymes/background.jpg')">
+            <div class="gradient text-left">
+              <img class="icon-image" src="http://www.produccion.gob.ar/wp-content/uploads/2016/12/registropymes/img/icon2.png" alt="">
+              <!-- <span class="fa-stack fa-lg icon-image">
+                <i class="fa fa-circle fa-stack-2x" style="color:#F29F1F"></i>
+                <i class="fa fa-clock-o fa-stack-1x" style="color:#fff"></i>
+              </span> -->
+            </div>
           </div>
           <div class="col-md-12 col-md-offset-0 col-xs-12 col-xs-offset-0 text-left">
-            <strong><h4 style="font-weight:bold; text-align: center;">Otro beneficio</h4></strong>
+            <h4 class="uppercase"><strong>Beneficio 2</strong></h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           </div>
         </div>
         </div>
 
-        <div class="col-md-4 m-b-3">
-          <div target="_blank"  href="#" class="back-blanco">
-          <div class="col-md-4 col-md-offset-4 col-xs-4 col-xs-offset-4">
-            <img class="img-responsive" alt="" src="http://www.produccion.gob.ar/wp-content/uploads/2016/12/icon.png">
+        <div class="col-md-4 m-b-3 text-sm-left">
+          <div class="back-foto" style="border-color:#CF2748">
+
+          <div class="col-md-12 col-md-offset-0 back-container" style="background: url('http://www.produccion.gob.ar/wp-content/uploads/2016/12/registropymes/background.jpg')">
+            <div class="gradient text-left">
+              <!-- <img class="icon-image" src="img/icon3.png" alt=""> -->
+              <span class="fa-stack fa-lg icon-image">
+                <i class="fa fa-circle fa-stack-2x" style="color:#CF2748"></i>
+                <i class="fa fa-file-o fa-stack-1x" style="color:#fff"></i>
+              </span>
+            </div>
           </div>
           <div class="col-md-12 col-md-offset-0 col-xs-12 col-xs-offset-0 text-left">
-            <strong><h4 style="font-weight:bold; text-align: center;">Uno más</h4></strong>
+            <h4 class="uppercase"><strong>Beneficio 3</strong></h4>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           </div>
         </div>
@@ -270,51 +103,34 @@ ul.checked-3 li::before {color: #008ccc;}
 </div>
 </div>
 
-  <section style="background-color:#A3CCFF; padding-bottom: 135px;">
+  <section style="background: linear-gradient(-60deg, #D8E8FF 35%, #fff 35%);">
     <!--div class="text-center">
       <img class="img-bloque"  width="150" alt="" src="http://www.produccion.gob.ar/wp-content/uploads/2016/11/leydeemprendedores/icono-simplificacion-blanco.png">
     </div-->
     <div class="container">
         <div class="row m-t-2 text-sm-center">
+          <h2 style="text-align:center; font-weight:bold; color:#CF2748">DATOS</h2>
+          <hr>
           <div class="col-md-8 m-b-3 text-sm-center">
-              <h1 style="text-align:center; font-size:36px; margin-bottom: 20px; color: #666;">DATOS</h1>
-
-              <form>
-              <label><input type="radio" name="dataset" id="dataset" value="total" checked> Total</label>
-              <label><input type="radio" name="dataset" id="dataset" value="option1"> Option 1</label>
-              <label><input type="radio" name="dataset" id="dataset" value="option2"> Option 2</label>
-              </form>
-
-              <div class="col-md-6 m-b-3">
-                <div target="_blank"  href="#" class="back-blanco">
-                <div class="col-md-4 col-md-offset-4 col-xs-4 col-xs-offset-4">
-                  <img class="img-responsive" alt="" src="http://www.produccion.gob.ar/wp-content/uploads/2016/12/icon.png">
-                </div>
-                <div class="col-md-12 col-md-offset-0 col-xs-12 col-xs-offset-0 text-left">
-                  <strong><h4 style="font-weight:bold; text-align: center;">Datos</h4></strong>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
+              <div class="col-md-4 text-right">
+                <h4><span style="background:#CF2748; color:#fff">Titulo del gráfico 1</span></h4>
               </div>
+              <div class="col-md-8 m-b-3 donut-container" id="donut1">
               </div>
+              <hr style="width: 75%;border-color:#ddd;float: left;margin-left: 150px;">
 
-              <div class="col-md-6 m-b-3 donut-container back-blanco" id="donut">
-
-
-
+              <div class="col-md-4 text-right">
+                <h4><span style="background:#F69D1F; color:#fff">Titulo del gráfico 2</span></h4>
               </div>
-
-
-
-              <div class="col-md-6 m-b-3 donut-container back-blanco" id="donut2">
-
+              <div class="col-md-8 m-b-3 donut-container" id="donut2">
               </div>
+              <hr style="width: 62%;border-color:#ddd;float: left;margin-left: 150px;">
 
-
-
-              <div class="col-md-6 m-b-3 donut-container back-blanco" id="donut3">
-
+              <div class="col-md-4 text-right">
+                <h4><span style="background:#3BB8E6; color:#fff">Titulo del gráfico 3</span></h4>
               </div>
-
+              <div class="col-md-8 m-b-3 donut-container" id="donut3">
+              </div>
 
           </div>
 
@@ -336,7 +152,7 @@ ul.checked-3 li::before {color: #008ccc;}
 crossorigin="anonymous"></script>
 <script type="text/javascript" src="http://www.produccion.gob.ar/wp-content/uploads/2016/12/registropymes/js/dumb-data.js"></script>
 <script type="text/javascript" src="http://www.produccion.gob.ar/wp-content/uploads/2016/12/registropymes/js/changeDonuts.js"></script>
-<!-- <script type="text/javascript" src="http://www.produccion.gob.ar/wp-content/uploads/2016/12/loadMap.js"></script> -->
+<!-- <script type="text/javascript" src="http://www.produccion.gob.ar/wp-content/uploads/2016/12/registropymes/http://www.produccion.gob.ar/wp-content/uploads/2016/12/loadMap.js"></script> -->
 <script type="text/javascript" src="http://www.produccion.gob.ar/wp-content/uploads/2016/12/registropymes/js/loadMap.js"></script>
 <script type="text/javascript" src="http://www.produccion.gob.ar/wp-content/uploads/2016/12/registropymes/js/loadDonut1.js"></script>
 <script type="text/javascript" src="http://www.produccion.gob.ar/wp-content/uploads/2016/12/registropymes/js/loadDonut2.js"></script>

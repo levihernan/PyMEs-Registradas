@@ -1,7 +1,7 @@
 //Map dimensions (in pixels)
 console.log("drawing map");
 var width = $('#map').width(),
-    height = 500;
+    height = 600;
 
 //Map projection
 var projection = d3.geo.transverseMercator()
@@ -36,8 +36,8 @@ var color = d3.scale.quantize()
 
 
 
-// d3.json("http://www.produccion.gob.ar/wp-content/uploads/2016/12/registropymes/js/argentina.geojson",function(error,geodata) {
-d3.json("js/argentina.geojson",function(error,geodata) {
+d3.json("http://www.produccion.gob.ar/wp-content/uploads/2016/12/registropymes/js/argentina.geojson",function(error,geodata) {
+// d3.json("js/argentina.geojson",function(error,geodata) {
   if (error) return console.log(" error viejaaaa"); //unknown error, check the console
 
   //Create a path for each map feature in the data

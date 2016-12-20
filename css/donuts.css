@@ -1,6 +1,6 @@
 .donut-container{
-  min-width: 300px;
-  min-height: 300px;
+  margin: 10px 0;
+  height: 180px;
 }
 svg {
 	width: 100%;

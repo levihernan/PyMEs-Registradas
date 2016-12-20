@@ -7,6 +7,9 @@
 body{
   color: #666 !important
 }
+html{
+  overflow-x: hidden;
+}
 .jumbotron{
   background-size: cover;
     background-position: 50%;
