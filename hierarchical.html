@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
+<script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 <style>
 
 text {
@@ -25,6 +26,7 @@ rect.background {
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script>
 
+var unorderedArray = []
 
 var margin = {top: 30, right: 120, bottom: 0, left: 120},
     width = 960 - margin.left - margin.right,
@@ -246,4 +248,20 @@ function stack(i) {
     return tx;
   };
 }
+
+function pushUnordered(i) {
+  unorderedArray.push([i,$('g#'+i+' rect').width()])
+}
+function createUnorderedArray(length) {
+    for (var n = 0; n < length; n++) { //CAMBIAR 5 POR INDEX NUMBER
+    pushUnordered(n)
+  }
+}
+function arraySorter(){
+    sortedArray = unorderedArray.sort(function(a, b){return b[1]-a[1]});
+    for (var i = 0; i < sortedArray.length; i++) {
+      $('g#'+sortedArray[i][0]).attr('transform','translate(0,'+i*36+')')
+    }
+}
+
 </script>
