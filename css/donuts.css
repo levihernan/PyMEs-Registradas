@@ -1,3 +1,6 @@
+body{
+  margin: 0
+}
 .donut-container{
   margin: 10px 0;
   height: 180px;
@@ -43,4 +46,57 @@ div.tooltipMap {
   padding: 4px 8px;
   display: none;
   opacity:1;
+}
+.infoContainer{
+  width: 300px;
+  background: #fff;
+  position: absolute;
+  bottom: 180px;
+  right: 50px;
+  zoom: .8;
+  border-radius: 3px;
+  box-shadow: 0 0 20px -5px #333;
+  overflow: hidden;
+}
+.infoHeader{
+  height: 60px;
+  position: relative;
+  padding: 15px;
+  background: #F12147;
+}
+.infoHeader h2{
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #fff;
+  padding-left: 20px;
+}
+.infoShadow{
+  height: 60px;
+  width: 60px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: linear-gradient(to bottom right, #F12147 50%, #BC1739 50%)
+}
+.infoBody{
+  margin: 15px;
+  color: #666;
+}
+.infoBody h3{
+  margin-top: 5px;
+  color: #BC1739;
+  font-weight: bold
+}
+.porcContainer{
+  height: 20px;
+  width: 100%;
+  border-radius: 5px;
+  background: #eee;
+  overflow: hidden;
+}
+.porcBar{
+  background: #BC1739;
+  width: 65%;
+  float: left;
+  transition: width ease 0.5s
 }

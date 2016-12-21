@@ -135,6 +135,7 @@ article {
 }
 section {
   padding: 60px 0;
+  position: relative;
 }
 .text-white {color:#fff;}
 img.img-bloque {
