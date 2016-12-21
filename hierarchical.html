@@ -40,7 +40,7 @@ var barHeight = 30;
 var color = d3.scale.ordinal()
     .range(["steelblue", "#ccc"]);
 
-var duration = 0,
+var duration = 75,
     delay = 0;
 
 var partition = d3.layout.partition()
@@ -135,12 +135,12 @@ function down(d, i) {
 
   // Transition exiting bars to the new x-scale.
   exitTransition.selectAll("rect")
-      .attr("width", function(d) { return x(d.size); });
+      // .attr("width", function(d) { return x(d.size); });
 
   // Rebind the current node to the background.
   svg.select(".background")
       .datum(d)
-    .transition()
+      .transition()
       .duration(end);
 
   d.index = i;
@@ -211,6 +211,8 @@ function up(d) {
       .datum(d.parent)
     .transition()
       .duration(end);
+
+  setTimeout(arraySorter,100);
 }
 
 // Creates a set of bars for the given data node, at the specified index.
@@ -263,5 +265,9 @@ function arraySorter(){
       $('g#'+sortedArray[i][0]).attr('transform','translate(0,'+i*36+')')
     }
 }
+
+setTimeout(createUnorderedArray,150,6);
+setTimeout(arraySorter,175);
+
 
 </script>
