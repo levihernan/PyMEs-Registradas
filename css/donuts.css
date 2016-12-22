@@ -55,7 +55,7 @@ div.tooltipMap {
   right: 50px;
   zoom: .8;
   border-radius: 3px;
-  box-shadow: 0 0 20px -5px #333;
+  box-shadow: 0 0 20px -7px #333;
   overflow: hidden;
 }
 .infoHeader{
