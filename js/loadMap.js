@@ -1,14 +1,14 @@
 // ------------ Variables con data provisoria. Se inicia con argentina---------//
-var totalPymes_ARG = provincias_data.arg.pymes;
-var porcPymes_ARG = provincias_data.arg.pymes_por;
+var totalPymes_ARG = provincias_data.arg.info.pymes;
+var porcPymes_ARG = provincias_data.arg.info.pymes_por;
 
 $('#provPymes').html("Argentina");
 
-      totalPymes = provincias_data['arg'].pymes;
+      totalPymes = provincias_data['arg'].info.pymes;
       var pymesCountUp = new CountUp("totalPymes", 0, totalPymes_ARG, 0, 0.5);
       pymesCountUp.start();
 
-      porcPymes = provincias_data['arg'].pymes_por;
+      porcPymes = provincias_data['arg'].info.pymes_por;
       var pymes_porCountUp = new CountUp("porcPymes", 0, porcPymes_ARG*100, 0, 0.5);
       pymes_porCountUp.start();
 
@@ -97,7 +97,7 @@ d3.json("js/argentina.geojson",function(error,geodata) {
       porcPymes = provincias_data[provincia].info.pymes_por;
       var pymes_porCountUp = new CountUp("porcPymes", porcPymes_var*100, porcPymes*100, 0, 0.5, options);
       pymes_porCountUp.start();
-
+      $('#porcBar').css('width', porcPymes*100+'%');
       totalPymes_var = totalPymes;
       porcPymes_var = porcPymes;
 
@@ -122,6 +122,10 @@ d3.json("js/argentina.geojson",function(error,geodata) {
 
       var pymes_porCountUp = new CountUp("porcPymes", porcPymes_var*100, porcPymes_ARG*100, 0, 0.5, options);
       pymes_porCountUp.start();
+      $('#porcBar').css('width', porcPymes_ARG*100+'%');
+
+      totalPymes_var = totalPymes_ARG;
+      porcPymes_var = porcPymes_ARG;
 
     })
     .on("click",clicked);

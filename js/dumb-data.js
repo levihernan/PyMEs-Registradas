@@ -45,8 +45,8 @@ var cordoba = {
   ],
   info: {
     name: "Jujuy",
-    pymes: 78000,
-    pymes_por: 0.5
+    pymes: 178000,
+    pymes_por: 0.7
   }
 };
 
@@ -181,8 +181,10 @@ var entre_rios = {
 };
 
 var arg = {
-  pymes:300000,
-  pymes_por:0.4
+  info: {
+    pymes:300000,
+    pymes_por:0.4
+  }
 }
 
 var provincias_data = {arg:arg, entre_rios:entre_rios, cordoba: cordoba, jujuy: jujuy, buenos_aires: buenos_aires, rio_negro: rio_negro, mendoza: mendoza, chaco: chaco};
