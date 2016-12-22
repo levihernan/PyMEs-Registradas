@@ -1,0 +1,89 @@
+{
+ "name": "flare",
+ "children": [
+  {
+   "name": "Buenos Aires",
+   "size":76
+  },
+  {
+   "name": "Cordoba",
+   "size": 65
+  },
+  {
+   "name": "Catamarca",
+   "size":70
+  },
+  {
+   "name": "Chaco",
+   "size":58
+  },
+  {
+   "name": "Chubut",
+   "size":28
+  },
+  {
+   "name": "Corrientes",
+   "size":7
+  },
+  {
+   "name": "Tierra del Fuego",
+   "size": 80
+  },
+  {
+   "name": "Salta",
+   "size":72
+  },
+  {
+   "name": "Formosa",
+   "size":75
+  },
+  {
+   "name": "Santiago del Estero",
+   "size":60
+  },
+  {
+   "name": "Misiones",
+   "size":20
+  },
+  {
+   "name": "Tucumán",
+   "size": 35
+  },
+  {
+   "name": "Corrientes",
+   "size":42
+  },
+  {
+   "name": "La Rioja",
+   "size":50
+  },
+  {
+   "name": "Santa Fe",
+   "size":8
+  },
+  {
+   "name": "San Juan",
+   "size":74
+  },
+  {
+   "name": "Mendoza",
+   "size": 57
+  },
+  {
+   "name": "Entre Rios",
+   "size":62
+  },
+  {
+   "name": "La Pampa",
+   "size":36
+  },
+  {
+   "name": "Rio Negro",
+   "size":23
+  },
+  {
+   "name": "Santa Cruz",
+   "size":27
+  }
+   ]
+  }

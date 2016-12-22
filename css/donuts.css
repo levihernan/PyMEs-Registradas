@@ -100,3 +100,23 @@ div.tooltipMap {
   float: left;
   transition: width ease 0.5s
 }
+
+/*CSS PARA EL HIERARCHICAL*/
+
+text {
+  font: 10px sans-serif;
+}
+
+rect.background {
+  fill: white;
+}
+
+.axis {
+  shape-rendering: crispEdges;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+}

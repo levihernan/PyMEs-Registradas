@@ -62,7 +62,7 @@ d3.json("js/argentina.geojson",function(error,geodata) {
 
       showTooltip(d,pos);
       hoveredPath.style('fill','rgb(32, 94, 140)');
-      
+
       provincia = d.properties.provincia.toLowerCase().replaceAll(" ","_");
       console.log(provincia);
 
