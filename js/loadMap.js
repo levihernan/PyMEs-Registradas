@@ -1,3 +1,21 @@
+// ------------ Variables con data provisoria. Se inicia con argentina---------//
+var totalPymes_ARG = provincias_data.arg.pymes;
+var porcPymes_ARG = provincias_data.arg.pymes_por;
+
+$('#provPymes').html("Argentina");
+
+      totalPymes = provincias_data['arg'].pymes;
+      var pymesCountUp = new CountUp("totalPymes", 0, totalPymes_ARG, 0, 0.5);
+      pymesCountUp.start();
+
+      porcPymes = provincias_data['arg'].pymes_por;
+      var pymes_porCountUp = new CountUp("porcPymes", 0, porcPymes_ARG*100, 0, 0.5);
+      pymes_porCountUp.start();
+
+      totalPymes_var = totalPymes_ARG;
+      porcPymes_var = porcPymes_ARG;
+// ------------ ------------------------------------------------------------//
+
 //Map dimensions (in pixels)
 console.log("drawing map");
 var width = $('#map').width(),
@@ -50,9 +68,6 @@ d3.json("js/argentina.geojson",function(error,geodata) {
 
     .on("mouseover",function(d){
 
-      console.log("data is");
-      console.log(d);
-
       hoveredPath = d3.select(this);
       console.log(hoveredPath);
 
@@ -63,8 +78,28 @@ d3.json("js/argentina.geojson",function(error,geodata) {
       showTooltip(d,pos);
       hoveredPath.style('fill','rgb(32, 94, 140)');
 
+      /* ------------- ACTUALIZO CUADRITO --------------------*/
       provincia = d.properties.provincia.toLowerCase().replaceAll(" ","_");
       console.log(provincia);
+
+      /* ------------- ACTUALIZO CUADRITO --------------------*/
+      nombreProvincia = d.properties.provincia;
+      if(nombreProvincia === 'Santiago del Estero'){
+        nombreProvincia = 'Sgo. del Estero'
+      }
+      $('#provPymes').html(nombreProvincia);
+
+
+      totalPymes = provincias_data[provincia].info.pymes;
+      var pymesCountUp = new CountUp("totalPymes", totalPymes_var, totalPymes, 0, 0.5, options);
+      pymesCountUp.start();
+
+      porcPymes = provincias_data[provincia].info.pymes_por;
+      var pymes_porCountUp = new CountUp("porcPymes", porcPymes_var*100, porcPymes*100, 0, 0.5, options);
+      pymes_porCountUp.start();
+
+      totalPymes_var = totalPymes;
+      porcPymes_var = porcPymes;
 
       //Uso el objeto grande y mando la variable string que sale de arriba como selector o provincia_data.provincia
       changeDonuts(provincias_data[provincia]);
@@ -79,6 +114,15 @@ d3.json("js/argentina.geojson",function(error,geodata) {
       hideTooltip();
       hoveredPath = d3.select(this);
       hoveredPath.style('fill','rgb(49, 130, 189)');
+
+      /*-------------VUELVO CONTADORES A ARGENTINA-------------------*/
+      $('#provPymes').html('Argentina');
+      var pymesCountUp = new CountUp("totalPymes", totalPymes_var, totalPymes_ARG, 0, 0.5, options);
+      pymesCountUp.start();
+
+      var pymes_porCountUp = new CountUp("porcPymes", porcPymes_var*100, porcPymes_ARG*100, 0, 0.5, options);
+      pymes_porCountUp.start();
+
     })
     .on("click",clicked);
 

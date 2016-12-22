@@ -153,5 +153,37 @@ var chaco = {
     pymes_por: 0.5
   }
 };
-var provincias_data = {cordoba: cordoba, jujuy: jujuy, buenos_aires: buenos_aires, rio_negro: rio_negro, mendoza: mendoza, chaco: chaco};
+
+var entre_rios = {
+  size: [
+    {label:"Pequeña", value:21.4},
+    {label:"MT1", value:50},
+    {label:"MT2", value:2.1},
+    {label:"Micro", value:32.5}
+  ],
+  sector: [
+    {label:"Comercio", value:47.2},
+    {label:"Mineria", value:0.2},
+    {label:"Agropecuario", value:14.5},
+    {label:"Industria", value:56.9},
+    {label:"Servicios", value:38.2},
+    {label:"Construcción", value:3}
+  ],
+  empleador: [
+    {label:"No empleadoras", value:37},
+    {label:"Empleadoras", value:43}
+  ],
+  info: {
+    name: "Chaco",
+    pymes: 22000,
+    pymes_por: 0.3
+  }
+};
+
+var arg = {
+  pymes:300000,
+  pymes_por:0.4
+}
+
+var provincias_data = {arg:arg, entre_rios:entre_rios, cordoba: cordoba, jujuy: jujuy, buenos_aires: buenos_aires, rio_negro: rio_negro, mendoza: mendoza, chaco: chaco};
 // var provincias_data = {cordoba: cordoba, jujuy: jujuy};
