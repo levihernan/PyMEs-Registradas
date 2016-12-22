@@ -63,6 +63,7 @@ div.tooltipMap {
   position: relative;
   padding: 15px;
   background: #F12147;
+  z-index: 0
 }
 .infoHeader h2{
   margin-top: 0;
@@ -76,7 +77,8 @@ div.tooltipMap {
   position: absolute;
   right: 0;
   top: 0;
-  background: linear-gradient(to bottom right, #F12147 50%, #BC1739 50%)
+  background: linear-gradient(to bottom right, #F12147 50%, #BC1739 50%);
+  z-index: -1
 }
 .infoBody{
   margin: 15px;
