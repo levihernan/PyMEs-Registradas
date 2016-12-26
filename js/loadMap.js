@@ -127,6 +127,8 @@ d3.json("js/argentina.geojson",function(error,geodata) {
       totalPymes_var = totalPymes_ARG;
       porcPymes_var = porcPymes_ARG;
 
+      /*AGREGAR CHANGEDOUNTS(ARGENTINA)*/
+
     })
     .on("click",clicked);
 
@@ -138,20 +140,20 @@ var tooltipOffset = {x: -790, y: -135};
 //Create a tooltip, hidden at the start
 function showTooltip(d,pos) {
   // moveTooltip(d,pos);
-  console.log(d.properties.provincia);
-  tooltip.style("display","block")
-      .text(d.properties.provincia);
-
-  tooltip.style("top",(pos.top+tooltipOffset.y)+"px")
-     .style("left",(pos.left+tooltipOffset.x)+"px");
+  // console.log(d.properties.provincia);
+  // tooltip.style("display","block")
+  //     .text(d.properties.provincia);
+  //
+  // tooltip.style("top",(pos.top+tooltipOffset.y)+"px")
+  //    .style("left",(pos.left+tooltipOffset.x)+"px");
 
 }
 
 //Move the tooltip to track the mouse
 function moveTooltip(d,pos) {
-  console.log("Inside showTooltip");
-  console.log(pos.top);
-  console.log(pos.left);
+  // console.log("Inside showTooltip");
+  // console.log(pos.top);
+  // console.log(pos.left);
 }
 
 //Create a tooltip, hidden at the start

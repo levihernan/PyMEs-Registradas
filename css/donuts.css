@@ -136,3 +136,6 @@ rect.background {
   top: 15px;
   color: #999
 }
+#svg0, #barGraph{
+  height: 600px;
+}
