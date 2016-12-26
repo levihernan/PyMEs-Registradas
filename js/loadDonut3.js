@@ -21,7 +21,7 @@ var color = d3.scale.ordinal()
 	.range(colorRange.range());
 
 
-change(jujuy.empleador);
+change(arg.empleador);
 
 
 d3.selectAll("input")

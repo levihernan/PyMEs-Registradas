@@ -127,7 +127,7 @@ d3.json("js/argentina.geojson",function(error,geodata) {
       totalPymes_var = totalPymes_ARG;
       porcPymes_var = porcPymes_ARG;
 
-      /*AGREGAR CHANGEDOUNTS(ARGENTINA)*/
+      changeDonuts(arg)
 
     })
     .on("click",clicked);

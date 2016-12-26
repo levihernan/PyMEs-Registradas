@@ -44,28 +44,12 @@ var colorRange = d3.scale.category20();
 var color = d3.scale.ordinal()
 	.range(colorRange.range());
 
-change(jujuy.size);
+change(arg.size);
 
 
 d3.selectAll("input")
 	.on("change", selectDataset);
 
-function selectDataset()
-{
-	var value = this.value;
-	if (value == "total")
-	{
-		change(jujuy.size);
-	}
-	else if (value == "option1")
-	{
-		change(cordoba.size);
-	}
-	else if (value == "option2")
-	{
-		change(jujuy.size);
-	}
-}
 
 function change(data) {
 

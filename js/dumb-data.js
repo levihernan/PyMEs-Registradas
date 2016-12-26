@@ -181,6 +181,24 @@ var entre_rios = {
 };
 
 var arg = {
+  size: [
+    {label:"Pequeña", value:21.4},
+    {label:"MT1", value:50},
+    {label:"MT2", value:2.1},
+    {label:"Micro", value:100}
+  ],
+  sector: [
+    {label:"Comercio", value:47.2},
+    {label:"Mineria", value:0.2},
+    {label:"Agropecuario", value:14.5},
+    {label:"Industria", value:56.9},
+    {label:"Servicios", value:38.2},
+    {label:"Construcción", value:100}
+  ],
+  empleador: [
+    {label:"No empleadoras", value:37},
+    {label:"Empleadoras", value:100}
+  ],
   info: {
     pymes:300000,
     pymes_por:0.4
