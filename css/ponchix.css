@@ -55,8 +55,17 @@ h4{
 p li{
   font-size: 14px
 }
+ul{
+  padding: 15px;
+}
 .uppercase{
   text-transform: uppercase;
+}
+.mobileHide{
+  display: inline-block !important;
+}
+.pcHide{
+  display: none !important;
 }
 .back-color{
   padding: 0 10px;
@@ -85,6 +94,7 @@ p li{
 .back-foto{
   border-bottom: solid 2px;
   display: inline-block;
+  margin-bottom: 30px;
 }
 .back-container{
   padding: 0 !important;
@@ -192,12 +202,67 @@ ul.checked-3 li::before {color: #008ccc;}
 #fa-twitter {background-color: #00bcf1;}
 #fa-twitter:hover {background-color: #05acd3;}
 
-@media screen and (min-width: 768px) {
-  .jumbotron .jumbotron_body h1 {
-    font-size: 40px;
-    }
-  }
+/* Dropdown styling */
+.dropbtn {
+    //background-color: #4CAF50;
+    color: white;
+    padding: 4px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #006599;
+}
+#myInput {
+    border-box: box-sizing;
+    background-image: url('http://www.produccion.gob.ar/wp-content/uploads/ponchix/searchicon.png');
+    background-position: 14px 12px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 14px 20px 12px 45px;
+    border: none;
+    width: 100%;
+}
+#myInput:before{
+    content: "\f002";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 200px;
+    overflow: auto;
+    //box-shadow: 0px 0px 20px -5px rgba(0,0,0,0.2);
+    z-index: 10;
+    max-height: 50vh;
+    width: 200px;
+    box-shadow: 0 0 0 10000px rgba(0,52,79,0.2);
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    white-space: nowrap;
+}
+.dropdown a:hover {background-color: #ddd}
+.show {display:block;}
+
 @media screen and (max-width: 768px) {
+  body{
+    overflow-x: hidden;
+  }
   img.img-bloque {
     margin-top: -130px;
     width: 150px;
@@ -217,20 +282,18 @@ ul.checked-3 li::before {color: #008ccc;}
   .googleMap{
     display: none;
   }
+  .shrinkCenter{
+    max-width: 80%;
+    margin: 20px auto !important;
   }
-
-@media screen and (min-width: 768px) and (max-width: 1200px) {
-  .panel-body {
-    padding: 15px 5px;
-    }
+  .mobileHide{
+    display: none !important;
   }
-
-@media (min-width: 768px) {
-  .panels-row {
-    flex-wrap: nowrap;
-    }
+  .pcHide{
+    display: inline-block !important;
   }
-
-.form-group .btn-primary{
-  margin: 0px !important;
+  section {
+    padding: 20px 0;
+    position: relative;
+  }
 }

@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="css/donuts.css">
 <link rel="stylesheet" href="css/ponchix.css">
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script src="js/countUp.js"></script>
 <!--D3.JS-->
@@ -111,14 +112,14 @@
 </section>
 </div>
 
-<div class="col-md-4 col-md-offset-4 boton text-center" style="margin-bottom:70px">
+<div class="col-md-4 col-md-offset-4 boton text-center shrinkCenter" style="margin-bottom:70px">
   <h3>Registrá tu PyME</h3>
 </div>
 
 </div>
 
 <div class="row">
-    <div class="col-md-8 col-md-offset-2 text-center" style="padding-bottom:70px">
+    <div class="col-md-8 col-md-offset-2 text-center mobileHide" style="padding-bottom:70px">
       <h2 class="m-b-2" style="font-weight:bold; color:#3BB8E6">RANKING</h2>
       <hr>
       <h4>Porcentajes de PyMEs registradas por provincia</h4>
@@ -133,23 +134,86 @@
       <img class="img-bloque"  width="150" alt="" src="http://www.produccion.gob.ar/wp-content/uploads/2016/11/leydeemprendedores/icono-simplificacion-blanco.png">
     </div-->
     <div class="container">
-        <div class="row m-t-2 text-sm-center">
+        <div class="row m-t-2 text-center">
           <h2 style="text-align:center; font-weight:bold; color:#CF2748">DATOS</h2>
           <hr>
-          <div class="col-md-8 m-b-3 text-sm-center">
+
+<div class="dropdown pcHide">
+  <button onclick="dropFunction()" class="dropbtn boton"><h4>Provincias <i class="fa fa-angle-down"></i></h4></button>
+    <div id="myDropdown" class="dropdown-content">
+      <input type="text" placeholder="Buscar..." id="myInput" onkeyup="filterFunction()">
+      <div class="percentHolder"><a id="buenos_aires" id="baires">Buenos Aires</a>
+      </div><div class="percentHolder"><a id="tierra_del_fuego">Tierra del Fuego</a>
+      </div><div class="percentHolder"><a id="jujuy">Jujuy</a>
+      </div><div class="percentHolder"><a id="salta">Salta</a>
+      </div><div class="percentHolder"><a id="formosa">Formosa</a>
+      </div><div class="percentHolder"><a id="chaco">Chaco</a>
+      </div><div class="percentHolder"><a id="catamarca">Catamarca</a>
+      </div><div class="percentHolder"><a id="santiago_del_estero">Santiago del Estero</a>
+      </div><div class="percentHolder"><a id="misiones">Misiones</a>
+      </div><div class="percentHolder"><a id="tucuman">Tucumán</a>
+      </div><div class="percentHolder"><a id="corrientes">Corrientes</a>
+      </div><div class="percentHolder"><a id="la_rioja">La Rioja</a>
+      </div><div class="percentHolder"><a id="santa_fe">Santa Fe</a>
+      </div><div class="percentHolder"><a id="san_juan">San Juan</a>
+      </div><div class="percentHolder"><a id="cordoba">Córdoba</a>
+      </div><div class="percentHolder"><a id="entre_rios">Entre Ríos</a>
+      </div><div class="percentHolder"><a id="san_luis">San Luis</a>
+      </div><div class="percentHolder"><a id="mendoza">Mendoza</a>
+      </div><div class="percentHolder"><a id="la_pampa">La Pampa</a>
+      </div><div class="percentHolder"><a id="neuquen">Neuquén</a>
+      </div><div class="percentHolder"><a id="rio_negro">Río Negro</a>
+      </div><div class="percentHolder"><a id="chubut">Chubut</a>
+      </div><div class="percentHolder"><a id="santa_cruz">Santa Cruz</a>
+      </div>
+    </div>
+  </div>
+
+<script>
+  /* When the user clicks on the button,
+  toggle between hiding and showing the dropdown content */
+  function dropFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+  };
+
+  function filterFunction() {
+      var input, filter, ul, li, a, i;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      div = document.getElementById("myDropdown");
+      a = div.getElementsByTagName("a");
+      for (i = 0; i < a.length; i++) {
+          if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+              a[i].style.display = "";
+          } else {
+              a[i].style.display = "none";
+          }
+      }
+  };
+
+  for (var n = 0; n < $('.percentHolder').length; n++) {
+    id = $('.percentHolder')[n].children[0].id;
+    $('#'+id).css('width','75%');
+    $('#'+id).after('<span class="percentData">75%</span>');
+  }
+
+
+</script>
+
+          <div class="col-md-8 m-b-3 text-sm-center" style="padding:0;">
               <div class="col-md-4 text-right">
                 <h4><span class="back-color" style="background:#CF2748; color:#fff">Titulo del gráfico</span></h4>
               </div>
               <div class="col-md-8 m-b-3 donut-container" id="donut1">
               </div>
-              <hr style="width: 75%;border-color:#ddd;float: left;margin-left: 150px;">
+              <hr class="mobileHide" style="width: 75%;border-color:#ddd;float: left;margin-left: 150px;">
 
               <div class="col-md-4 text-right">
                 <h4><span class="back-color" style="background:#F69D1F; color:#fff">Titulo del gráfico 2</span></h4>
               </div>
               <div class="col-md-8 m-b-3 donut-container" id="donut2">
               </div>
-              <hr style="width: 62%;border-color:#ddd;float: left;margin-left: 150px;">
+              <hr class="mobileHide" style="width: 62%;border-color:#ddd;float: left;margin-left: 150px;">
 
               <div class="col-md-4 text-right">
                 <h4><span class="back-color" style="background:#3BB8E6; color:#fff">Titulo del gráfico 3</span></h4>
@@ -160,18 +224,18 @@
           </div>
 
 
-          <div class="col-md-4 m-b-3" id="map">
+          <div class="col-md-4 m-b-3 mobileHide" id="map">
 
           </div>
           <div class="row">
-            <div class="col-md-6 col-md-offset-3 text-center">
+            <div class="col-md-6 col-md-offset-3 text-center shrinkCenter">
               <p style="background-color:#3182bd; color:#fff; border-radius:3px">Fuente: Consejo de Monitoreo y Competitividad MiPyME (SEPYME), en base a datos del registro PyME y GPS Empresas (STP)</p>
             </div>
           </div>
 
       </div>
     </div>
-    <div class="infoContainer">
+    <div class="infoContainer mobileHide">
       <div class="infoHeader">
         <h2 id="provPymes">Jujuy</h2>
         <div class="infoShadow">

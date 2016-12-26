@@ -4,6 +4,7 @@ body{
 .donut-container{
   margin: 10px 0;
   height: 180px;
+  padding: 0 !important
 }
 svg {
 	width: 100%;
@@ -121,4 +122,17 @@ rect.background {
 .axis line {
   fill: none;
   stroke: #000;
+}
+
+.dropdown-content a{
+  background-color: #ddd
+}
+.percentHolder{
+  position: relative;
+}
+.percentData{
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  color: #999
 }
