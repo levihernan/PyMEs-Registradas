@@ -1,138 +1,153 @@
-// ------------ Variables con data provisoria. Se inicia con argentina---------//
-var totalPymes_ARG = provincias_data.arg.info.pymes;
-var porcPymes_ARG = provincias_data.arg.info.pymes_por;
+function load_map(){
 
-$('#provPymes').html("Argentina");
+    // ------------ Variables con data provisoria. Se inicia con argentina---------//
+    var totalPymes_ARG = provincias_general_data.total.universe;
+    var porcPymes_ARG = provincias_general_data.total.percent;
 
-      totalPymes = provincias_data['arg'].info.pymes;
-      var pymesCountUp = new CountUp("totalPymes", 0, totalPymes_ARG, 0, 0.5);
-      pymesCountUp.start();
+    $('#provPymes').html("Argentina");
 
-      porcPymes = provincias_data['arg'].info.pymes_por;
-      var pymes_porCountUp = new CountUp("porcPymes", 0, porcPymes_ARG*100, 0, 0.5);
-      pymes_porCountUp.start();
+          totalPymes = provincias_general_data.total.universe;
+          var pymesCountUp = new CountUp("totalPymes", 0, totalPymes_ARG, 0, 0.5);
+          pymesCountUp.start();
 
-      totalPymes_var = totalPymes_ARG;
-      porcPymes_var = porcPymes_ARG;
-// ------------ ------------------------------------------------------------//
+          porcPymes = provincias_general_data.total.percent;
+          var pymes_porCountUp = new CountUp("porcPymes", 0, porcPymes_ARG*100, 0, 0.5);
+          pymes_porCountUp.start();
 
-//Map dimensions (in pixels)
-console.log("drawing map");
-var width = $('#map').width(),
-    height = 600;
+          totalPymes_var = totalPymes_ARG;
+          porcPymes_var = porcPymes_ARG;
 
-//Map projection
-var projection = d3.geo.transverseMercator()
-                       .center([2.5, -38.5])
-                       .rotate([66, 0])
-                       .scale((height * 56.5) / 33)
-                       .translate([(width/2), (height / 2)]);
+    // -------------------------------------------------------------------------//
 
-//Generate paths based on projection
-var path = d3.geo.path()
-    .projection(projection);
+    //Map dimensions (in pixels)
+    console.log("drawing map");
+    var width = $('#map').width(),
+        height = 600;
 
-//Create a tooltip, hidden at the start
-var tooltip = d3.select("#map").append("div").attr("class","tooltipMap");
+    //Map projection
+    var projection = d3.geo.transverseMercator()
+                           .center([2.5, -38.5])
+                           .rotate([66, 0])
+                           .scale((height * 56.5) / 33)
+                           .translate([(width/2), (height / 2)]);
 
-//Create an SVG
-var svg = d3.select("#map").append("svg")
-  .attr("id","svg0")
-   .attr("width", width)
-   .attr("height", height);
-    // .attr("viewBox", "0 0 600 378")
-    // .attr("perserveAspectRatio","xMinYMid");
+    //Generate paths based on projection
+    var path = d3.geo.path()
+        .projection(projection);
 
-//Group for the map features
-var features = svg.append("g")
-    .attr("class","features");
+    //Create a tooltip, hidden at the start
+    var tooltip = d3.select("#map").append("div").attr("class","tooltipMap");
 
-//Create choropleth scale
-var color = d3.scale.quantize()
-    .domain([0,1])
-    .range(d3.range(3).map(function(i) { return "q" + i + "-3"; }));
+    //Create an SVG
+    var svg = d3.select("#map").append("svg")
+      .attr("id","svg0")
+       .attr("width", width)
+       .attr("height", height);
+        // .attr("viewBox", "0 0 600 378")
+        // .attr("perserveAspectRatio","xMinYMid");
 
+    //Group for the map features
+    var features = svg.append("g")
+        .attr("class","features");
 
-
-// d3.json("http://www.produccion.gob.ar/wp-content/uploads/2016/12/registropymes/js/argentina.geojson",function(error,geodata) {
-d3.json("js/argentina.geojson",function(error,geodata) {
-  if (error) return console.log(" error viejaaaa"); //unknown error, check the console
-
-  //Create a path for each map feature in the data
-  features.selectAll("path")
-    .data(geodata.features)
-    .enter()
-    .append("path")
-    .attr("d",path)
-    .attr("style", "fill:rgb(49, 130, 189);cursor:pointer;")
-
-    .on("mouseover",function(d){
-
-      hoveredPath = d3.select(this);
-      console.log(hoveredPath);
-
-      pos = hoveredPath[0][0].getBoundingClientRect();
-      console.log("posTop: "+ pos.top);
-      console.log("posLeft: "+ pos.left);
-
-      showTooltip(d,pos);
-      hoveredPath.style('fill','rgb(32, 94, 140)');
-
-      /* ------------- ACTUALIZO CUADRITO --------------------*/
-      provincia = d.properties.provincia.toLowerCase().replaceAll(" ","_");
-      console.log(provincia);
-
-      /* ------------- ACTUALIZO CUADRITO --------------------*/
-      nombreProvincia = d.properties.provincia;
-      if(nombreProvincia === 'Santiago del Estero'){
-        nombreProvincia = 'Sgo. del Estero'
-      }
-      $('#provPymes').html(nombreProvincia);
+    //Create choropleth scale
+    var color = d3.scale.quantize()
+        .domain([0,1])
+        .range(d3.range(3).map(function(i) { return "q" + i + "-3"; }));
 
 
-      totalPymes = provincias_data[provincia].info.pymes;
-      var pymesCountUp = new CountUp("totalPymes", totalPymes_var, totalPymes, 0, 0.5, options);
-      pymesCountUp.start();
 
-      porcPymes = provincias_data[provincia].info.pymes_por;
-      var pymes_porCountUp = new CountUp("porcPymes", porcPymes_var*100, porcPymes*100, 0, 0.5, options);
-      pymes_porCountUp.start();
-      $('#porcBar').css('width', porcPymes*100+'%');
-      totalPymes_var = totalPymes;
-      porcPymes_var = porcPymes;
+    // d3.json("http://www.produccion.gob.ar/wp-content/uploads/2016/12/registropymes/js/argentina.geojson",function(error,geodata) {
+    d3.json("js/argentina.geojson",function(error,geodata) {
+      if (error) return console.log(" error viejaaaa"); //unknown error, check the console
 
-      //Uso el objeto grande y mando la variable string que sale de arriba como selector o provincia_data.provincia
-      changeDonuts(provincias_data[provincia]);
+      //Create a path for each map feature in the data
+      features.selectAll("path")
+        .data(geodata.features)
+        .enter()
+        .append("path")
+        .attr("d",path)
+        .attr("style", "fill:rgb(49, 130, 189);cursor:pointer;")
 
-    })
-    .on("mousemove", function(d){
-      // moveTooltip();
+        .on("mouseover",function(d){
 
-    })
-    .on("mouseout",function(d){
+          hoveredPath = d3.select(this);
+          console.log(hoveredPath);
 
-      hideTooltip();
-      hoveredPath = d3.select(this);
-      hoveredPath.style('fill','rgb(49, 130, 189)');
+          pos = hoveredPath[0][0].getBoundingClientRect();
+          console.log("posTop: "+ pos.top);
+          console.log("posLeft: "+ pos.left);
 
-      /*-------------VUELVO CONTADORES A ARGENTINA-------------------*/
-      $('#provPymes').html('Argentina');
-      var pymesCountUp = new CountUp("totalPymes", totalPymes_var, totalPymes_ARG, 0, 0.5, options);
-      pymesCountUp.start();
+          // showTooltip(d,pos);
+          hoveredPath.style('fill','rgb(32, 94, 140)');
 
-      var pymes_porCountUp = new CountUp("porcPymes", porcPymes_var*100, porcPymes_ARG*100, 0, 0.5, options);
-      pymes_porCountUp.start();
-      $('#porcBar').css('width', porcPymes_ARG*100+'%');
+          /* ------------- ACTUALIZO CUADRITO --------------------*/
+          provincia = d.properties.provincia.toLowerCase().replaceAll(" ","_");
+          console.log(provincia);
 
-      totalPymes_var = totalPymes_ARG;
-      porcPymes_var = porcPymes_ARG;
+          /* ------------- ACTUALIZO CUADRITO --------------------*/
+          nombreProvincia = d.properties.provincia;
+          if(nombreProvincia === 'Santiago del Estero'){
+            nombreProvincia = 'Sgo. del Estero'
+          }if(nombreProvincia === 'Rio Negro'){
+            nombreProvincia = 'Río Negro'
+          }if(nombreProvincia === 'Cordoba'){
+            nombreProvincia = 'Córdoba'
+          }if(nombreProvincia === 'Entre Rios'){
+            nombreProvincia = 'Entre Ríos'
+          }if(nombreProvincia === 'Neuquen'){
+            nombreProvincia = 'Neuquén'
+          }
+          $('#provPymes').html(nombreProvincia);
 
-      changeDonuts(arg)
 
-    })
-    .on("click",clicked);
+          totalPymes = provincias_general_data[provincia].universe;
+          var pymesCountUp = new CountUp("totalPymes", totalPymes_var, totalPymes, 0, 0.5, options);
+          pymesCountUp.start();
 
-});
+          porcPymes = provincias_general_data[provincia].percent;
+          var pymes_porCountUp = new CountUp("porcPymes", porcPymes_var*100, porcPymes*100, 0, 0.5, options);
+          pymes_porCountUp.start();
+          $('#porcBar').css('width', porcPymes*100+'%');
+          totalPymes_var = totalPymes;
+          porcPymes_var = porcPymes;
+
+          //Uso el objeto grande y mando la variable string que sale de arriba como selector o provincia_data.provincia
+          changeDonuts(provincias_data[provincia]);
+
+        })
+        .on("mousemove", function(d){
+          // moveTooltip();
+
+        })
+        .on("mouseout",function(d){
+
+          
+          hoveredPath = d3.select(this);
+          hoveredPath.style('fill','rgb(49, 130, 189)');
+
+          /*-------------VUELVO CONTADORES A ARGENTINA-------------------*/
+          $('#provPymes').html('Argentina');
+          var pymesCountUp = new CountUp("totalPymes", totalPymes_var, totalPymes_ARG, 0, 0.5, options);
+          pymesCountUp.start();
+
+          var pymes_porCountUp = new CountUp("porcPymes", porcPymes_var*100, porcPymes_ARG*100, 0, 0.5, options);
+          pymes_porCountUp.start();
+          $('#porcBar').css('width', porcPymes_ARG*100+'%');
+
+          totalPymes_var = totalPymes_ARG;
+          porcPymes_var = porcPymes_ARG;
+
+          /*AGREGAR CHANGEDOUNTS(ARGENTINA)*/
+
+        })
+        .on("click",clicked);
+
+    });
+
+}
+
+
 
 //Position of the tooltip relative to the cursor
 var tooltipOffset = {x: -790, y: -135};

@@ -207,3 +207,49 @@ var arg = {
 
 var provincias_data = {arg:arg, entre_rios:entre_rios, cordoba: cordoba, jujuy: jujuy, buenos_aires: buenos_aires, rio_negro: rio_negro, mendoza: mendoza, chaco: chaco};
 // var provincias_data = {cordoba: cordoba, jujuy: jujuy};
+
+// ----------------- EXTIENDO ARRAY PARA SUMAR PROPIEDADES ----------//
+Array.prototype.sum = function (prop) {
+    var total = 0
+    for ( var i = 0, _len = this.length; i < _len; i++ ) {
+        total += this[i][prop]
+    }
+    return total
+}
+
+var provincias_general_data = {};
+
+jQuery.ajax({
+    url: "http://181.209.66.161/afip/api/por_provincia",
+    type: "GET",
+    dataType: "json",
+    contentType: "application/text; charset=utf-8",
+    success: function (response) {
+        console.log(response);
+
+        for(var i = 0;i<response.length;i++){
+
+          // console.log("i: ", i, " - ", resData[i]);
+          provinceCode = response[i].Provincia.toLowerCase().replaceAll(" ",'_');
+          // console.log(provinceCode);
+          cantidadRes = response[i].Cantidad;
+          universeRes = response[i].universe;
+          percentRes = cantidadRes / universeRes;
+
+          //Necesito la siguente linea pq las propiedades de provincia no existen
+          provincias_general_data[provinceCode] = provincias_general_data[provinceCode] || {};
+
+          provincias_general_data[provinceCode].cantidad = cantidadRes;
+          provincias_general_data[provinceCode].universe = universeRes;
+          provincias_general_data[provinceCode].percent = parseFloat(percentRes.toFixed(4));
+
+        }
+    },
+    error: function (response) {
+        console.log("failed API load");
+    }
+}).done(function(){
+    console.log(provincias_general_data);
+    load_map();
+});
+

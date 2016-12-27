@@ -190,8 +190,8 @@
           }
       }
   };
-
-  for (var n = 0; n < $('.percentHolder').length; n++) {
+  var percentHolderLength = $('.percentHolder').length;
+  for (var n = 0; n < percentHolderLength; n++) {
     id = $('.percentHolder')[n].children[0].id;
     $('#'+id).css('width','75%');
     $('#'+id).after('<span class="percentData">75%</span>');
