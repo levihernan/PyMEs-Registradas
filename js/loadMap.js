@@ -1,8 +1,8 @@
 function load_map(){
 
     // ------------ Variables con data provisoria. Se inicia con argentina---------//
-    var totalPymes_ARG = provincias_general_data.total.universe;
-    var porcPymes_ARG = provincias_general_data.total.percent;
+    totalPymes_ARG = provincias_general_data.total.universe;
+    porcPymes_ARG = provincias_general_data.total.percent;
 
     $('#provPymes').html("Argentina");
 
@@ -57,10 +57,8 @@ function load_map(){
 
 
 
-    // d3.json("http://www.produccion.gob.ar/wp-content/uploads/2016/12/registropymes/js/argentina.geojson",function(error,geodata) {
     d3.json("js/argentina.geojson",function(error,geodata) {
-      if (error) return console.log(" error viejaaaa"); //unknown error, check the console
-
+      if (error) return console.log("Error loading data"); //unknown error, check the console
       //Create a path for each map feature in the data
       features.selectAll("path")
         .data(geodata.features)
@@ -122,21 +120,21 @@ function load_map(){
         })
         .on("mouseout",function(d){
 
-          
+
           hoveredPath = d3.select(this);
           hoveredPath.style('fill','rgb(49, 130, 189)');
 
           /*-------------VUELVO CONTADORES A ARGENTINA-------------------*/
-          $('#provPymes').html('Argentina');
-          var pymesCountUp = new CountUp("totalPymes", totalPymes_var, totalPymes_ARG, 0, 0.5, options);
-          pymesCountUp.start();
-
-          var pymes_porCountUp = new CountUp("porcPymes", porcPymes_var*100, porcPymes_ARG*100, 0, 0.5, options);
-          pymes_porCountUp.start();
-          $('#porcBar').css('width', porcPymes_ARG*100+'%');
-
-          totalPymes_var = totalPymes_ARG;
-          porcPymes_var = porcPymes_ARG;
+          // $('#provPymes').html('Argentina');
+          // var pymesCountUp = new CountUp("totalPymes", totalPymes_var, totalPymes_ARG, 0, 0.5, options);
+          // pymesCountUp.start();
+          //
+          // var pymes_porCountUp = new CountUp("porcPymes", porcPymes_var*100, porcPymes_ARG*100, 0, 0.5, options);
+          // pymes_porCountUp.start();
+          // $('#porcBar').css('width', porcPymes_ARG*100+'%');
+          //
+          // totalPymes_var = totalPymes_ARG;
+          // porcPymes_var = porcPymes_ARG;
 
           /*AGREGAR CHANGEDOUNTS(ARGENTINA)*/
 
@@ -144,9 +142,8 @@ function load_map(){
         .on("click",clicked);
 
     });
-
+barrasMobile();
 }
-
 
 
 //Position of the tooltip relative to the cursor
@@ -184,6 +181,19 @@ function clicked(d,i) {
 
 }
 
+function contadoresArgentina() {
+  $('#provPymes').html('Argentina');
+  var pymesCountUp = new CountUp("totalPymes", totalPymes_var, totalPymes_ARG, 0, 0.5, options);
+  pymesCountUp.start();
+
+  var pymes_porCountUp = new CountUp("porcPymes", porcPymes_var*100, porcPymes_ARG*100, 0, 0.5, options);
+  pymes_porCountUp.start();
+  $('#porcBar').css('width', porcPymes_ARG*100+'%');
+
+  totalPymes_var = totalPymes_ARG;
+  porcPymes_var = porcPymes_ARG;
+
+}
 
 String.prototype.replaceAll = function(search, replacement) {
     var target = this;

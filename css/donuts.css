@@ -58,13 +58,15 @@ div.tooltipMap {
   border-radius: 3px;
   box-shadow: 0 0 20px -7px #333;
   overflow: hidden;
+  z-index: 100
 }
 .infoHeader{
   height: 60px;
   position: relative;
   padding: 15px;
   background: #F12147;
-  z-index: 0
+  z-index: 0;
+  text-align: left;
 }
 .infoHeader h2{
   margin-top: 0;
@@ -99,7 +101,7 @@ div.tooltipMap {
 }
 .porcBar{
   background: #BC1739;
-  width: 65%;
+  width: 20%;
   float: left;
   transition: width ease 0.5s
 }

@@ -1,10 +1,4 @@
-  /* When the user clicks on the button,
-  toggle between hiding and showing the dropdown content */
-  function dropFunction() {
-      document.getElementById("myDropdown").classList.toggle("show");
-  };
-
-  function filterFunction() {
+function filterFunction() {
       var input, filter, ul, li, a, i;
       input = document.getElementById("myInput");
       filter = input.value.toUpperCase();
@@ -19,11 +13,30 @@
       }
   };
 
-function barrasMobile(){
+function barrasMobile() {
+
+  var sortable = [];
+  var htmltext = "<input type='text' placeholder='Buscar...' id='myInput' onkeyup='filterFunction()'>";
+  for (var n in provincias_general_data){sortable.push([n, provincias_general_data[n].percent, provincias_general_data[n].percent])};
+  sortable.sort(function(a, b) {return b[1] - a[1]});
+
+  for (var n = 0; n < sortable.length; n++) {
+    var tempText = "<div class='percentHolder'><a id='" + sortable[n][0] + "' style='width:" + sortable[n][1]*100 + "%;'>" + sortable[n][0] + "<span class='percentData'>" + parseFloat(sortable[n][1]*100).toFixed(1) + "%</span></a></div>";
+    htmltext += tempText;
+  }
+  $('#myDropdown').html(htmltext);
+
   var percentHolderLength = $('.percentHolder').length;
   for (var n = 0; n < percentHolderLength; n++) {
     id = $('.percentHolder')[n].children[0].id;
     $('#'+id).css('width', provincias_general_data[id].percent*100 + '%');
-    $('#'+id).after('<span class="percentData">' + parseFloat(provincias_general_data[id].percent*100).toFixed(1) + '%</span>');
+    // $('#'+id).after('<span class="percentData">' + parseFloat(provincias_general_data[id].percent*100).toFixed(1) + '%</span>');
   }
+
 }
+
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function dropFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+};
