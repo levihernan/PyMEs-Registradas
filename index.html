@@ -27,7 +27,7 @@
         <div class="row">
           <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 text-center">
             <h1 class="m-b-2" id="titulo-jumbo" style="color:#fff"><span><strong>100.000 PyMEs</strong><br>Registradas</span>&nbsp;</h1>
-            <h3 style="color:#fff">TENÉS UNA PYME, TENÉS BENEFICIOS</h3>
+            <h3 style="color:#fff; margin-bottom:40px" id="subtitleH3">TENÉS UNA PYME, TENÉS BENEFICIOS</h3>
           </div>
         </div>
       </div>
@@ -37,9 +37,10 @@
 
 
   </section>
-  <div class="row">
+  <div class="curve-container bottom" style=""><svg id="hex-shape" class="curve bottom-right" width="100%" viewBox="0 0 612 94.24"><path d="M612,65.55V67.4L50.23,99.72c-6.17,0-13.65,4.32-16.74,9.7L0,159.79V65.55H612Z" transform="translate(0 -65.55)" fill="#fff"></path></svg></div>
+  <div class="row" style="background-color:#fff">
     <div class="col-md-8 col-md-offset-2 text-center">
-      <h2 class="m-b-2" style="font-weight:bold; color:#F29E1E">BENEFICIOS</h2>
+      <h2 class="m-b-2" id="beneficios" style="font-weight:bold; color:#F29E1E">BENEFICIOS</h2>
       <hr>
       <ul style="list-style: none;">
         <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
@@ -112,13 +113,14 @@
 </section>
 </div>
 
-<div class="col-md-4 col-md-offset-4 boton text-center shrinkCenter" style="margin-bottom:70px">
+<div class="col-md-4 col-md-offset-4 boton text-center shrinkCenter" style="margin-bottom:-70px">
   <h3>Registrá tu PyME</h3>
 </div>
 
 </div>
 
 <div class="row">
+  <svg class="mobileHide" id="hex-shape" viewBox="0 0 612 92.39" width="100%"><path d="M612,159.79V67.4H0l33.49,50.37c3.09,5.38,10.57,9.7,16.74,9.7Z" fill="#fff" transform="translate(0 -67.4)"></path></svg>
     <div class="col-md-8 col-md-offset-2 text-center mobileHide" style="padding-bottom:70px">
       <h2 class="m-b-2" style="font-weight:bold; color:#3BB8E6">RANKING</h2>
       <hr>
@@ -165,6 +167,25 @@
       </div><div class="percentHolder"><a id="rio_negro">Río Negro</a>
       </div><div class="percentHolder"><a id="chubut">Chubut</a>
       </div><div class="percentHolder"><a id="santa_cruz">Santa Cruz</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="infoContainer">
+    <div class="infoHeader">
+      <h2 id="provPymes">Jujuy</h2>
+      <div class="infoShadow">
+      </div>
+    </div>
+    <div class="infoBody">
+      <h4>Total de pymes:</h4>
+      <h3 id="totalPymes">942194</h3>
+      <h4>% de PyMEs registradas:</h4>
+      <h3><span id="porcPymes"></span>%</h3>
+      <div class="porcContainer">
+        <div class="porcBar" id="porcBar">
+          &nbsp;
+        </div>
       </div>
     </div>
   </div>
@@ -235,24 +256,7 @@
 
       </div>
     </div>
-    <div class="infoContainer mobileHide">
-      <div class="infoHeader">
-        <h2 id="provPymes">Jujuy</h2>
-        <div class="infoShadow">
-        </div>
-      </div>
-      <div class="infoBody">
-        <h4>Total de pymes:</h4>
-        <h3 id="totalPymes">942194</h3>
-        <h4>% de PyMEs registradas:</h4>
-        <h3><span id="porcPymes"></span>%</h3>
-        <div class="porcContainer">
-          <div class="porcBar" id="porcBar">
-            &nbsp;
-          </div>
-        </div>
-      </div>
-    </div>
+
   </section>
 
 

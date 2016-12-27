@@ -62,7 +62,7 @@ ul{
   text-transform: uppercase;
 }
 .mobileHide{
-  display: inline-block !important;
+  display: inline-block;
 }
 .pcHide{
   display: none !important;
@@ -277,7 +277,10 @@ ul.checked-3 li::before {color: #008ccc;}
     padding: 15px 5px;
     }
   #titulo-jumbo {
-    font-size: 2em !important;
+    font-size: 2.5em !important;
+  }
+  .jumbotron h3 {
+    font-size: 1em;
   }
   .googleMap{
     display: none;
