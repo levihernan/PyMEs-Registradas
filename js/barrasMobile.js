@@ -16,16 +16,19 @@ function filterFunction() {
 function barrasMobile() {
 
   var sortable = [];
-  var htmltext = "<input type='text' placeholder='Buscar...' id='myInput' onkeyup='filterFunction()'>";
+  var mobiletext = "<input type='text' placeholder='Buscar...' id='myInput' onkeyup='filterFunction()'>";
+  var pctext = ""
   for (var n in provincias_general_data){sortable.push([n, provincias_general_data[n].percent, provincias_general_data[n].percent])};
   sortable.sort(function(a, b) {return b[1] - a[1]});
 
   for (var n = 0; n < sortable.length; n++) {
-    var tempText = "<div class='percentHolder'><a id='" + sortable[n][0] + "' style='width:" + sortable[n][1]*100 + "%;'>" + sortable[n][0] + "<span class='percentData'>" + parseFloat(sortable[n][1]*100).toFixed(1) + "%</span></a></div>";
-    htmltext += tempText;
+    var tempText = "<div class='percentHolder' id='" + sortable[n][0] + "'><a style='width:" + sortable[n][1]*100 + "%;'>" + sortable[n][0] + "<span class='percentData'>" + parseFloat(sortable[n][1]*100).toFixed(1) + "%</span></a></div>";
+    mobiletext += tempText;
+    tempText = "<div class='bar' id='" + sortable[n][0] + "'><div class='barWidth' style='width:" + sortable[n][1]*100 + "%;'>" + sortable[n][0] + "<div class='barNum'>" + parseFloat(sortable[n][1]*100).toFixed(1) + "%</div></div></div>"
+    pctext += tempText;
   }
-  $('#myDropdown').html(htmltext);
-
+  $('#myDropdown').html(mobiletext);
+  $('#barChart').html(pctext);
   var percentHolderLength = $('.percentHolder').length;
   for (var n = 0; n < percentHolderLength; n++) {
     id = $('.percentHolder')[n].children[0].id;

@@ -105,6 +105,31 @@ div.tooltipMap {
   float: left;
   transition: width ease 0.5s
 }
+#barChart{
+  width: 600px;
+  margin: auto;
+  background: #fff;
+  box-shadow: 0 0 20px -10px;
+}
+.barNum {
+    position: absolute;
+    right: 4px;
+    top: 4px;
+}
+.barWidth {
+    background: #8ec0e4;
+    padding: 4px;
+    transition: all ease 0.3s
+}
+.barWidth:hover {
+    background: #0087cc;
+}
+.bar {
+    text-align: left;
+    position: relative;
+    font-size: 14px;
+    border-bottom: solid 1px #f0f0f0
+}
 
 /*CSS PARA EL HIERARCHICAL*/
 
