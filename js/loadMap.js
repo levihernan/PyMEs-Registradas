@@ -195,7 +195,14 @@ function contadoresArgentina() {
 
 }
 
+//Para hacer dos reemplazos en una string
 String.prototype.replaceAll = function(search, replacement) {
     var target = this;
     return target.replace(new RegExp(search, 'g'), replacement);
 };
+
+//Para capitalizar todas las palabras de una string
+function toTitleCase(str)
+{
+    return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+}
