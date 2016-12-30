@@ -181,6 +181,31 @@ function clicked(d,i) {
 
 }
 
+
+//Funcion con parámetro para actulizar data al hacer hover en gráfico de barras
+function updateDataonBarGraphHover(provinciaData){
+    fullName = provinciaData;
+    fullName = $(fullName).children()[0].innerHTML;
+    console.log(fullName);
+    var y = fullName.indexOf('<div');
+    fullName = fullName.slice(0,y);
+    console.log(fullName);
+    $('#provPymes').html(fullName);
+
+
+    totalPymes = provincias_general_data[provinciaData.id].universe;
+    var pymesCountUp = new CountUp("totalPymes", totalPymes_var, totalPymes, 0, 0.5, options);
+    pymesCountUp.start();
+
+    porcPymes = provincias_general_data[provinciaData.id].percent;
+    var pymes_porCountUp = new CountUp("porcPymes", porcPymes_var*100, porcPymes*100, 0, 0.5, options);
+    pymes_porCountUp.start();
+    $('#porcBar').css('width', porcPymes*100+'%');
+    totalPymes_var = totalPymes;
+    porcPymes_var = porcPymes;
+}
+
+//Funcion para que los contadores del cuadro vuelvan a Argentina
 function contadoresArgentina() {
   $('#provPymes').html('Argentina');
   var pymesCountUp = new CountUp("totalPymes", totalPymes_var, totalPymes_ARG, 0, 0.5, options);
