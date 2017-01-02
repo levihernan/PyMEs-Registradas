@@ -184,12 +184,20 @@ function clicked(d,i) {
 
 //Funcion con parámetro para actulizar data al hacer hover en gráfico de barras
 function updateDataonBarGraphHover(provinciaData){
+    //Meto en fullName el nombre de la prov, desde el contenido de innerHTML
     fullName = provinciaData;
     fullName = $(fullName).children()[0].innerHTML;
     console.log(fullName);
+    //Trimeo el nombre en Desktop
     var y = fullName.indexOf('<div');
     fullName = fullName.slice(0,y);
+    //Trimeo el nombre en Mobile
+    var y = fullName.indexOf('<span');
+    fullName = fullName.slice(0,y);
     console.log(fullName);
+    if(fullName === 'TOTAL'){
+      fullName = 'Argentina';
+    }
     $('#provPymes').html(fullName);
 
 

@@ -45,7 +45,7 @@ function barrasMobile() {
 
 
   for (var n = 0; n < sortable.length; n++) {
-    var tempText = "<div class='percentHolder' id='" + sortable[n][3] + "'><a style='width:" + sortable[n][1]*100 + "%;'>" + sortable[n][0] + "<span class='percentData'>" + parseFloat(sortable[n][1]*100).toFixed(1) + "%</span></a></div>";
+    var tempText = "<div class='percentHolder' onclick=\"updateDataonBarGraphHover(this);$(\'#myDropdown\').removeClass(\'show\')\" id='" + sortable[n][3] + "'><a style='width:" + sortable[n][1]*100 + "%;'>" + sortable[n][0] + "<span class='percentData'>" + parseFloat(sortable[n][1]*100).toFixed(1) + "%</span></a></div>";
     mobiletext += tempText;
     tempText = "<a href=\"#donas\"><div class='bar' onclick=\"updateDataonBarGraphHover(this)\" id='" + sortable[n][3] + "'><div class='barWidth' style='width:" + sortable[n][1]*100 + "%;'>" + sortable[n][0] + "<div class='barNum'>" + parseFloat(sortable[n][1]*100).toFixed(1) + "%</div></div></div></a>"
     pctext += tempText;
