@@ -189,10 +189,10 @@ function updateDataonBarGraphHover(provinciaData){
     fullName = $(fullName).children()[0].innerHTML;
     console.log(fullName);
     //Trimeo el nombre en Desktop
-    var y = fullName.indexOf('<div');
-    fullName = fullName.slice(0,y);
+    var yx = fullName.indexOf('<')+1;
+    fullName = fullName.slice(0,yx);
     //Trimeo el nombre en Mobile
-    var y = fullName.indexOf('<span');
+    var y = fullName.indexOf('<');
     fullName = fullName.slice(0,y);
     console.log(fullName);
     if(fullName === 'TOTAL'){
