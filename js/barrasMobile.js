@@ -40,8 +40,8 @@ function barrasMobile() {
     sortable.push([a, provincias_general_data[n].percent, provincias_general_data[n].percent,n])
   };
   sortable.sort(function(a, b) {return b[1] - a[1]});
-  console.log("sortable");
-  console.log(sortable);
+  // console.log("sortable");
+  // console.log(sortable);
 
   for (var n = 0; n < sortable.length; n++) {
     var tempText = "<div class='percentHolder' onclick=\"updateDataonBarGraphHover(this);$(\'#myDropdown\').removeClass(\'show\')\" id='" + sortable[n][3] + "'><a style='width:" + sortable[n][1]*100 + "%;'>" + sortable[n][0] + "<span class='percentData'>" + parseFloat(sortable[n][1]*100).toFixed(1) + "%</span></a></div>";
@@ -49,8 +49,8 @@ function barrasMobile() {
     tempText = "<a style=\"color:#006599 !important\" href=\"#donas\"><div class='bar' onclick=\"updateDataonBarGraphHover(this)\" id='" + sortable[n][3] + "'><div class='barWidth' style='width:" + sortable[n][1]*100 + "%;'>" + sortable[n][0] + "<div class='barNum'>" + parseFloat(sortable[n][1]*100).toFixed(1) + "%</div></div></div></a>"
     pctext += tempText;
   }
-  console.log("pctext");
-  console.log(pctext);
+  // console.log("pctext");
+  // console.log(pctext);
   $('#myDropdown').html(mobiletext);
   $('#barChart').html(pctext);
   var percentHolderLength = $('.percentHolder').length;

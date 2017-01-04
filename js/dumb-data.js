@@ -1,3 +1,7 @@
+var caba, mendoza, santa_fe, buenos_aires, cordoba, corrientes, entre_rios, formosa, tucuman, santiago_del_estero;
+var misiones, neuquen, salta, santa_cruz, chubut, san_juan, chaco, jujuy, rio_negro, tierra_del_fuego, la_rioja;
+var san_luis, la_pampa, catamarca;
+
 var jujuy = {
   size: [
     {label:"Pequeña", value:21.4},
@@ -205,7 +209,8 @@ var arg = {
   }
 }
 
-var provincias_data = {arg:arg, entre_rios:entre_rios, cordoba: cordoba, jujuy: jujuy, buenos_aires: buenos_aires, rio_negro: rio_negro, mendoza: mendoza, chaco: chaco};
+//var provincias_data = {arg:arg, entre_rios:entre_rios, cordoba: cordoba, jujuy: jujuy, buenos_aires: buenos_aires, rio_negro: rio_negro, mendoza: mendoza, chaco: chaco};
+var provincias_data = {arg:arg};
 // var provincias_data = {cordoba: cordoba, jujuy: jujuy};
 
 // ----------------- EXTIENDO ARRAY PARA SUMAR PROPIEDADES ----------//
@@ -225,7 +230,7 @@ jQuery.ajax({
     dataType: "json",
     contentType: "application/text; charset=utf-8",
     success: function (response) {
-        console.log(response);
+        // console.log(response);
 
         for(var i = 0;i<response.length;i++){
 
@@ -251,5 +256,156 @@ jQuery.ajax({
 }).done(function(){
     console.log(provincias_general_data);
     load_map();
+    // loadDonutData();
 });
 
+
+// -------------------------------------- CARGO SECTORES -------------------------------------- //
+for(var i = 0;i<23;i++){
+  $.ajax({
+    dataType: "json",
+    url: "http://181.209.66.161/afip/api/por_sector_custom/"+i,  
+    success: function(response) {   
+
+      res = response;
+      var url = this.url;
+      slashPos = url.lastIndexOf('/');
+      urlNum = url.slice(slashPos+1);
+      console.log(urlNum);
+      // console.log(urlNum);
+      var nombreProvincia = codeToProv(parseInt(urlNum));
+      // console.log(nombreProvincia);
+      console.log(nombreProvincia);
+      if(urlNum == 1){
+        console.log('Buenos Aires')
+        console.log(res);
+        console.log(response);
+      };
+      //Necesito la siguente linea pq las propiedades de provincia no existen
+      provincias_data[nombreProvincia] = provincias_data[nombreProvincia] || {};
+      provincias_data[nombreProvincia].sector = []
+      for(var j = 0;j<res.length;j++){
+          // console.log("res[j] is -------> ");
+          // console.log(res[j]);
+          if(res[j]['Sector'] !== 'Total'){
+              provincias_data[nombreProvincia].sector.push({label:res[j]['Sector'], value:res[j]['Cantidad']}) 
+          }
+
+      }
+      // console.log("Funciono????????");
+      // console.log(nombreProvincia);
+      // console.log(provincias_data[nombreProvincia]);
+
+    },error: function(err){
+      console.log(error);
+    }
+  });   
+};
+
+// -------------------------------------- CARGO CATEGORIAS (size)-------------------------------------- //
+for(var i = 0;i<23;i++){
+  $.ajax({
+    dataType: "json",
+    url: "http://181.209.66.161/afip/api/por_categoria_custom/"+i,  
+    success: function(response) {   
+
+      res = response;
+      // console.log(res);
+      var url = this.url;
+      slashPos = url.lastIndexOf('/');
+      urlNum = url.slice(slashPos+1);
+      // console.log(urlNum);
+      var nombreProvincia = codeToProv(parseInt(urlNum));
+      console.log(nombreProvincia);
+      // console.log(nombreProvincia);
+      if(urlNum == 1){
+        console.log('Buenos Aires')
+        console.log(res);
+        console.log(response);
+      };
+      //Necesito la siguente linea pq las propiedades de provincia no existen
+      provincias_data[nombreProvincia] = provincias_data[nombreProvincia] || {};
+      provincias_data[nombreProvincia].size = []
+      for(var j = 0;j<res.length;j++){
+          // console.log("res[j] is -------> ");
+          // console.log(res[j]);
+          var cat = correctSizeName(res[j]['Categoria']);
+          if(cat !== 'Total' && cat !== undefined){
+            provincias_data[nombreProvincia].size.push({label:cat, value:res[j]['Cantidad']})
+          }
+      }
+
+    },error: function(err){
+      console.log(error);
+    }
+  });   
+}
+
+var correctSizeName = function(code){
+  switch(code) {
+      case "micro":
+        return "Micro";
+      case "peq":
+        return "Pequeña";
+      case "tramo1":
+        return "MT1";
+      case "tramo2":
+        return "MT2";
+  }
+}
+var codeToProv = function(code){
+  switch(code) {
+      case 0:
+          return "caba";
+      case 1:
+          return "buenos_aires";
+      case 2:
+          return "catamarca";
+      case 3:
+          return "cordoba";
+      case 4:
+          return "corrientes";
+      case 5:
+          return "entre_rios";
+      case 6:
+          return "jujuy";
+      case 7:
+          return "mendoza";
+      case 8:
+          return "la_rioja";
+      case 9:
+          return "salta";
+      case 10:
+          return "san_juan";
+      case 11:
+          return "san_luis";
+      case 12:
+          return "santa_fe";
+      case 13:
+          return "santiago_del_estero";
+      case 14:
+          return "tucuman";
+      case 15:
+          return "total";
+      case 16:
+          return "chaco";
+      case 17:
+          return "chubut";
+      case 18:
+          return "formosa";
+      case 19:
+          return "misiones";
+      case 20:
+          return "neuquen";
+      case 21:
+          return "la_pampa";
+      case 22:
+          return "rio_negro";
+      case 23:
+          return "santa_cruz";
+      case 24:
+          return "tierra_del_fuego";
+      default:
+          return "undefined province";
+  }
+}

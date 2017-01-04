@@ -73,8 +73,8 @@ function load_map(){
           console.log(hoveredPath);
 
           pos = hoveredPath[0][0].getBoundingClientRect();
-          console.log("posTop: "+ pos.top);
-          console.log("posLeft: "+ pos.left);
+          // console.log("posTop: "+ pos.top);
+          // console.log("posLeft: "+ pos.left);
 
           // showTooltip(d,pos);
           hoveredPath.style('fill','rgb(32, 94, 140)');
@@ -136,7 +136,7 @@ function load_map(){
           // totalPymes_var = totalPymes_ARG;
           // porcPymes_var = porcPymes_ARG;
 
-          /*AGREGAR CHANGEDOUNTS(ARGENTINA)*/
+          changeDonuts(provincias_data['arg']);
 
         })
         .on("click",clicked);
@@ -182,8 +182,9 @@ function clicked(d,i) {
 }
 
 
-//Funcion con parámetro para actulizar data al hacer hover en gráfico de barras
+//Funcion con parámetro para actulizar data al hacer hover en gráfico de barras o click en dropdown
 function updateDataonBarGraphHover(provinciaData){
+
     //Meto en fullName el nombre de la prov, desde el contenido de innerHTML
     fullName = provinciaData;
     fullName = $(fullName).children()[0].innerHTML;
@@ -211,6 +212,8 @@ function updateDataonBarGraphHover(provinciaData){
     $('#porcBar').css('width', porcPymes*100+'%');
     totalPymes_var = totalPymes;
     porcPymes_var = porcPymes;
+
+    changeDonuts(provincias_data[provinciaData.id]);
 }
 
 //Funcion para que los contadores del cuadro vuelvan a Argentina
