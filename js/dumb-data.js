@@ -184,30 +184,30 @@ var san_luis, la_pampa, catamarca, arg;
 //   }
 // };
 //
-// var arg = {
-//   size: [
-//     {label:"Pequeña", value:21.4},
-//     {label:"MT1", value:50},
-//     {label:"MT2", value:2.1},
-//     {label:"Micro", value:100}
-//   ],
-//   sector: [
-//     {label:"Comercio", value:47.2},
-//     {label:"Mineria", value:0.2},
-//     {label:"Agropecuario", value:14.5},
-//     {label:"Industria", value:56.9},
-//     {label:"Servicios", value:38.2},
-//     {label:"Construcción", value:100}
-//   ],
-//   empleador: [
-//     {label:"No empleadoras", value:37},
-//     {label:"Empleadoras", value:100}
-//   ],
-//   info: {
-//     pymes:300000,
-//     pymes_por:0.4
-//   }
-// }
+var arg = {
+  size: [
+    {label:"Pequeña", value:21.4},
+    {label:"MT1", value:50},
+    {label:"MT2", value:2.1},
+    {label:"Micro", value:26.5}
+  ],
+  sector: [
+    {label:"Comercio", value:27.2},
+    {label:"Mineria", value:0.2},
+    {label:"Agropecuario", value:14.5},
+    {label:"Industria", value:26.9},
+    {label:"Servicios", value:28.2},
+    {label:"Construcción", value:3}
+  ],
+  empleador: [
+    {label:"No empleadoras", value:37},
+    {label:"Empleadoras", value:100}
+  ],
+  info: {
+    pymes:300000,
+    pymes_por:0.4
+  }
+}
 
 //var provincias_data = {arg:arg, entre_rios:entre_rios, cordoba: cordoba, jujuy: jujuy, buenos_aires: buenos_aires, rio_negro: rio_negro, mendoza: mendoza, chaco: chaco};
 var provincias_data = {arg:arg};
@@ -261,7 +261,8 @@ jQuery.ajax({
 
 
 // -------------------------------------- CARGO SECTORES -------------------------------------- //
-for(var i = 0;i<23;i++){
+for(var i = 0;i<25;i++){
+
   $.ajax({
     dataType: "json",
     url: "http://181.209.66.161/afip/api/por_sector_custom/"+i,
@@ -291,13 +292,15 @@ for(var i = 0;i<23;i++){
       // console.log(provincias_data[nombreProvincia]);
 
     },error: function(err){
-      console.log(error);
+      console.log(err);
     }
   });
 };
 
 // -------------------------------------- CARGO CATEGORIAS (size)-------------------------------------- //
-for(var i = 0;i<23;i++){
+for(var i = 0;i<25;i++){
+
+
   $.ajax({
     dataType: "json",
     url: "http://181.209.66.161/afip/api/por_categoria_custom/"+i,
@@ -325,12 +328,12 @@ for(var i = 0;i<23;i++){
       }
 
     },error: function(err){
-      console.log(error);
+      console.log(err);
     }
   });
 }
 // -------------------------------------- CARGO empleadoras/no_empleadoras-------------------------------------- //
-for(var i = 0;i<23;i++){
+for(var i = 0;i<25;i++){
   $.ajax({
     dataType: "json",
     url: "http://181.209.66.161/afip/api/empleados/"+i,
@@ -350,22 +353,24 @@ for(var i = 0;i<23;i++){
       for(var j = 0;j<res.length;j++){
           // console.log("res[j] is -------> ");
           // console.log(res[j]);
-          var tipo = correctTipoName(res[j]['Tipo']);
+          var tipo = correctTipoName(res[j]['Clasificacion']);
+          console.log(tipo);
           if(tipo !== 'Total' && tipo !== undefined){
-            provincias_data[nombreProvincia].size.push({label:tipo, value:res[j]['Porcentual']})
+            provincias_data[nombreProvincia].empleador.push({label:tipo, value:res[j]['Porcentual']})
           }
       }
 
     },error: function(err){
-      console.log(error);
+      console.log(err);
     }
   });
 }
+
 var correctTipoName = function(code){
   switch(code) {
-      case "empleadoras":
+      case "Empleadoras":
         return "Empleadoras";
-      case "no_empleadoras":
+      case "No_empleadoras":
         return "No empleadoras";
   }  
 }
