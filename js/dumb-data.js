@@ -274,13 +274,7 @@ for(var i = 0;i<23;i++){
       console.log(urlNum);
       // console.log(urlNum);
       var nombreProvincia = codeToProv(parseInt(urlNum));
-      // console.log(nombreProvincia);
-      console.log(nombreProvincia);
-      if(urlNum == 1){
-        console.log('Buenos Aires')
-        console.log(res);
-        console.log(response);
-      };
+
       //Necesito la siguente linea pq las propiedades de provincia no existen
       provincias_data[nombreProvincia] = provincias_data[nombreProvincia] || {};
       provincias_data[nombreProvincia].sector = []
@@ -288,7 +282,7 @@ for(var i = 0;i<23;i++){
           // console.log("res[j] is -------> ");
           // console.log(res[j]);
           if(res[j]['Sector'] !== 'Total'){
-              provincias_data[nombreProvincia].sector.push({label:res[j]['Sector'], value:res[j]['Cantidad']})
+              provincias_data[nombreProvincia].sector.push({label:res[j]['Sector'], value:res[j]['Porcentual']})
           }
 
       }
@@ -317,12 +311,7 @@ for(var i = 0;i<23;i++){
       // console.log(urlNum);
       var nombreProvincia = codeToProv(parseInt(urlNum));
       console.log(nombreProvincia);
-      // console.log(nombreProvincia);
-      if(urlNum == 1){
-        console.log('Buenos Aires')
-        console.log(res);
-        console.log(response);
-      };
+
       //Necesito la siguente linea pq las propiedades de provincia no existen
       provincias_data[nombreProvincia] = provincias_data[nombreProvincia] || {};
       provincias_data[nombreProvincia].size = []
@@ -331,7 +320,7 @@ for(var i = 0;i<23;i++){
           // console.log(res[j]);
           var cat = correctSizeName(res[j]['Categoria']);
           if(cat !== 'Total' && cat !== undefined){
-            provincias_data[nombreProvincia].size.push({label:cat, value:res[j]['Cantidad']})
+            provincias_data[nombreProvincia].size.push({label:cat, value:res[j]['Porcentual']})
           }
       }
 
@@ -340,7 +329,46 @@ for(var i = 0;i<23;i++){
     }
   });
 }
+// -------------------------------------- CARGO empleadoras/no_empleadoras-------------------------------------- //
+for(var i = 0;i<23;i++){
+  $.ajax({
+    dataType: "json",
+    url: "http://181.209.66.161/afip/api/empleados/"+i,
+    success: function(response) {
 
+      res = response;
+      // console.log(res);
+      var url = this.url;
+      slashPos = url.lastIndexOf('/');
+      urlNum = url.slice(slashPos+1);
+      // console.log(urlNum);
+      var nombreProvincia = codeToProv(parseInt(urlNum));
+
+      //Necesito la siguente linea pq las propiedades de provincia no existen
+      provincias_data[nombreProvincia] = provincias_data[nombreProvincia] || {};
+      provincias_data[nombreProvincia].empleador = []
+      for(var j = 0;j<res.length;j++){
+          // console.log("res[j] is -------> ");
+          // console.log(res[j]);
+          var tipo = correctTipoName(res[j]['Tipo']);
+          if(tipo !== 'Total' && tipo !== undefined){
+            provincias_data[nombreProvincia].size.push({label:tipo, value:res[j]['Porcentual']})
+          }
+      }
+
+    },error: function(err){
+      console.log(error);
+    }
+  });
+}
+var correctTipoName = function(code){
+  switch(code) {
+      case "empleadoras":
+        return "Empleadoras";
+      case "no_empleadoras":
+        return "No empleadoras";
+  }  
+}
 var correctSizeName = function(code){
   switch(code) {
       case "micro":
