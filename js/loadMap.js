@@ -214,6 +214,8 @@ function updateDataonBarGraphHover(provinciaData){
     totalPymes_var = totalPymes;
     porcPymes_var = porcPymes;
 
+    $('#myDropdown').removeClass('show');
+
     changeDonuts(provincias_data[provinciaData.id]);
 }
 
