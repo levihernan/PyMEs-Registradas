@@ -44,9 +44,15 @@ function barrasMobile() {
   // console.log(sortable);
 
   for (var n = 0; n < sortable.length; n++) {
-    var tempText = "<div class='percentHolder' onclick=\"updateDataonBarGraphHover(this);$(\'#myDropdown\').removeClass(\'show\')\" id='" + sortable[n][3] + "'><a style='width:" + sortable[n][1]*100 + "%;'>" + sortable[n][0] + "<span class='percentData'>" + parseFloat(sortable[n][1]*100).toFixed(1) + "%</span></a></div>";
+    if (sortable[n][3] !== "total"){
+      idtext = sortable[n][3];
+    }
+    else {
+      idtext = "arg";
+    };
+    var tempText = "<div class='percentHolder' onclick=\"updateDataonBarGraphHover(this);$(\'#myDropdown\').removeClass(\'show\')\" id='" + idtext + "'><a style='width:" + sortable[n][1]*100 + "%;'>" + sortable[n][0] + "<span class='percentData'>" + parseFloat(sortable[n][1]*100).toFixed(1) + "%</span></a></div>";
     mobiletext += tempText;
-    tempText = "<a style=\"color:#006599 !important\" href=\"#donas\"><div class='bar' onclick=\"updateDataonBarGraphHover(this)\" id='" + sortable[n][3] + "'><div class='barWidth' style='width:" + sortable[n][1]*100 + "%;'>" + sortable[n][0] + "<div class='barNum'>" + parseFloat(sortable[n][1]*100).toFixed(1) + "%</div></div></div></a>"
+    tempText = "<a style=\"color:#006599 !important\" href=\"#donas\"><div class='bar' onclick=\"updateDataonBarGraphHover(this)\" id='" + idtext + "'><div class='barWidth' style='width:" + sortable[n][1]*100 + "%;'>" + sortable[n][0] + "<div class='barNum'>" + parseFloat(sortable[n][1]*100).toFixed(1) + "%</div></div></div></a>"
     pctext += tempText;
   }
   // console.log("pctext");
