@@ -58,7 +58,7 @@ function load_map(){
 
 
     // d3.json("http://www.produccion.gob.ar/wp-content/uploads/2016/12/registropymes/js/argentina.geojson",function(error,geodata) {
-    d3.json("http://www.produccion.gob.ar/wp-content/uploads/2016/12/registropymes/js/simpleMap.json",function(error,geodata) {
+    d3.json("js/simpleMap.json",function(error,geodata) {
       if (error) return console.log("Error loading data"); //unknown error, check the console
       //Create a path for each map feature in the data
       features.selectAll("path")
@@ -137,7 +137,7 @@ function load_map(){
           // totalPymes_var = totalPymes_ARG;
           // porcPymes_var = porcPymes_ARG;
 
-          changeDonuts(provincias_data['arg']);
+          // changeDonuts(provincias_data['arg']);
 
         })
         .on("click",clicked);

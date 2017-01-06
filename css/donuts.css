@@ -48,6 +48,12 @@ div.tooltipMap {
   display: none;
   opacity:1;
 }
+#map{
+  position: absolute;
+  right: 140px;
+  width: 400px;
+  top: 140px;
+}
 .infoContainer{
   width: 300px;
   background: #fff;
