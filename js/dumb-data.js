@@ -186,22 +186,22 @@ var san_luis, la_pampa, catamarca, arg;
 //
 var arg = {
   size: [
-    {label:"Pequeña", value:21.4},
-    {label:"MT1", value:50},
-    {label:"MT2", value:2.1},
-    {label:"Micro", value:26.5}
+    {label:"Pequeña", value:22.4},
+    {label:"MT1", value:5.3},
+    {label:"MT2", value:0.22},
+    {label:"Micro", value:72.08}
   ],
   sector: [
-    {label:"Comercio", value:27.2},
-    {label:"Mineria", value:0.2},
-    {label:"Agropecuario", value:14.5},
-    {label:"Industria", value:26.9},
-    {label:"Servicios", value:28.2},
-    {label:"Construcción", value:3}
+    {label:"Comercio", value:26.3},
+    {label:"Mineria", value:0.34},
+    {label:"Agropecuario", value:21.5},
+    {label:"Industria", value:10.9},
+    {label:"Servicios", value:34.2},
+    {label:"Construcción", value:6.76}
   ],
   empleador: [
-    {label:"No empleadoras", value:37},
-    {label:"Empleadoras", value:100}
+    {label:"No empleadoras", value:45},
+    {label:"Empleadoras", value:55}
   ],
   info: {
     pymes:300000,
