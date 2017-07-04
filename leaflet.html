@@ -24,7 +24,7 @@
 <script src="http://leaflet.github.io/Leaflet.markercluster/example/realworld.10000.js"></script>
 <script>
 
-var map = L.map('map').setView([0, 0], 0);
+var map = L.map('map').setView([-35.32682418799993,-58.298137664999956], 4);
 
 var kildareStyle = {
  "fillColor": "#CC9933",
@@ -39,7 +39,8 @@ var tiles = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 
 addressPoints = addressPoints.map(function (p) { return [p[0], p[1]]; });
 
-var kildare = new L.GeoJSON.AJAX('stuff/shapes06.json', {style:kildareStyle}).addTo(map);
+// var kildare = new L.GeoJSON.AJAX('stuff/shapes06.json', {style:kildareStyle}).addTo(map);
+var kildare = new L.GeoJSON.AJAX('maps/provincias01.json', {style:kildareStyle}).addTo(map);
 
 
 var heat = L.heatLayer([[-35.32682418799993,-58.298137664999956]]).addTo(map);
