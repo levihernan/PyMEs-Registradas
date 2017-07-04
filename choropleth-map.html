@@ -18,22 +18,21 @@
 
 </head>
 <body>
-  <!-- <script type="text/javascript">
+  <script type="text/javascript">
   var json = (function () {
     var json = null;
     $.ajax({
       'async': false,
       'global': false,
-      // 'url': 'maps/provincias01.json',
-      'url': 'maps/provinces-feature.json',
+      'url': 'http://181.209.66.161/afip/api/por_provincia',
       'dataType': "json",
       'success': function (data) {
-        json = data;
+        afipData = data;
       }
     });
     return json;
   })();
-  </script> -->
+  </script>
   <div id="map"></div>
 
   <script src="leaflet/leaflet-heat.js"></script>
@@ -45,23 +44,26 @@
   var map = L.map('map').setView([-35.32682418799993,-58.298137664999956], 4);
 
   function getColor(d) {
-    return d > 1000 ? '#800026' :
-    d > 500  ? '#BD0026' :
-    d > 200  ? '#E31A1C' :
-    d > 100  ? '#FC4E2A' :
-    d > 50   ? '#FD8D3C' :
-    d > 20   ? '#FEB24C' :
-    d > 10   ? '#FED976' :
-    '#FFEDA0';
+    return d > 500  ? '#034e7b' :
+    d > 200  ? '#0570b0' :
+    d > 100  ? '#3690c0' :
+    d > 50   ? '#74a9cf' :
+    d > 20   ? '#a6bddb' :
+    d > 10   ? '#d0d1e6' :
+    '#f6eff7';
   }
+
+ function getPercent(id){
+   cant = afipData[id].Cantidad / afipData[id].universe * 500
+   return cant;
+ }
 
   function style(feature) {
     return {
-      fillColor: getColor(feature.properties.density),
+      fillColor: getColor(getPercent(feature.properties.id)),
       weight: 2,
       opacity: 1,
       color: 'white',
-      dashArray: '3',
       fillOpacity: 0.7
     };
   }
@@ -80,7 +82,7 @@
 
   var kildare = new L.GeoJSON.AJAX('maps/provincias01.json', {style:kildareStyle}).addTo(map);
 
-  var heat = new L.GeoJSON.AJAX('maps/provinces-feature.json', {style: style}).addTo(map);
+  var heat = new L.GeoJSON.AJAX('maps/provincias-json.json', {style: style}).addTo(map);
 
 
 

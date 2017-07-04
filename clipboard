@@ -1,0 +1,26 @@
+,
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [[[]]]
+  },
+  "properties": {
+    "name": "",
+    "id":
+  }
+}
+
+
+,
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [[[ ]]]
+  },
+  "properties": {
+    "name": "PROVINCIA",
+    "id": 1
+  }
+}
