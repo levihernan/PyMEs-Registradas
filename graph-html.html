@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Grafico HTML</title>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/poncho.min.css">
+    <link rel="stylesheet" href="/css/font-awesome.css">
+    <link rel="stylesheet" href="/css/graph-html.css">
+
+  </head>
+  <body>
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center mobileHide" style="padding-bottom:70px">
+          <h2 class="m-b-2" style="font-weight:bold; color:#3BB8E6">RANKING</h2>
+          <hr>
+          <h4>Porcentajes de PyMEs registradas por provincia</h4>
+          <div class="mobileHide" id="barChart">
+            <i class="fa fa-spinner fa-spin fa-3x fa-fw" style="margin:20px; color:#8EC0E4"></i>
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-2 col-md-offset-2">
+        <h4>Mendoza</h4>
+        <p>25.000 PyMEs registradas</p>
+        <p>70.000 trabajadores despedidos</p>
+        <div class="chartIcons">
+          <i class="fa fa-leaf"></i>
+          <i class="fa fa-truck"></i>
+          <i class="fa fa-money"></i>
+          <i class="fa fa-leaf"></i>
+          <i class="fa fa-leaf"></i>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="chartContainer">
+          <div class="barContainer industria">
+            <!-- <i class="fa fa-leaf"></i> -->
+            <div class="barData">
+
+            </div>
+            <div class="barWhitespace">
+              <strong>Industria</strong>: 20% de PyMEs Registradas
+            </div>
+          </div>
+          <div class="barContainer agropecuario">
+
+            <!-- <i class="fa fa-truck"></i> -->
+            <div class="barData">
+
+            </div>
+            <div class="barWhitespace">
+              <strong>Agropecuario</strong>: 25% de PyMEs Registradas
+            </div>
+          </div>
+          <div class="barContainer comercio">
+            <!-- <i class="fa fa-money"></i> -->
+            <div class="barData">
+
+            </div>
+            <div class="barWhitespace">
+              <strong>Comercio</strong>: 30% de PyMEs Registradas
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <script type="text/javascript" src="/js/graph-html.js"></script>
+  </body>
+</html>

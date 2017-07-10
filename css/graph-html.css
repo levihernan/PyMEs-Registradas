@@ -1,0 +1,94 @@
+#barChart{
+  width: 600px;
+  margin: auto;
+  background: #fff;
+  box-shadow: 0 0 20px -10px;
+}
+#barChart>a:hover{
+  text-decoration: none;
+}
+.barNum {
+    position: absolute;
+    right: 4px;
+    top: 4px;
+}
+.barWidth {
+    background: #8ec0e4;
+    padding: 4px;
+    transition: all ease 0.3s
+}
+.barWidth:hover {
+    background: #0087cc;
+}
+.bar {
+    text-align: left;
+    position: relative;
+    font-size: 14px;
+    border-bottom: solid 1px #f0f0f0;
+    white-space: nowrap;
+}
+
+.chartContainer{
+  width: 100%;
+  min-height: 200px;
+  /*background: url('/img/background.png');
+  background-size: contain;
+  background-repeat: repeat-y;*/
+  background: repeating-linear-gradient(
+  to right,
+  #ddd,
+  #ddd 1px,
+  #fff 1px,
+  #fff 10%
+);
+}
+.barContainer{
+  width: 100%;
+  position: relative;
+  background: #ddd;
+  height: 20px;
+  margin: 10px 0;
+}
+.greyContainer{
+  background: #ddd;
+  display: inline;
+  vertical-align: top;
+  width: 100%;
+}
+.barData{
+  margin: 0;
+  display: inline-block;
+  height: 20px;
+}
+.barWhitespace{
+  display: inline-block;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0;
+  vertical-align: bottom;
+}
+
+.industria .barData{
+  background: #0092cf;
+  width: 20%;
+}
+.agropecuario .barData{
+  background: #009200;
+  width: 25%;
+}
+.comercio .barData{
+  background: #cf9200;
+  width: 30%;
+}
+
+.chartIcons{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  top: 10px;
+}
+.chartIcons .fa {
+  line-height: 20px;
+  margin: 5px 0
+}
