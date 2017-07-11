@@ -1,0 +1,248 @@
+  /*HighCharts 420*/
+
+.tooltip-borde{
+  box-shadow: 0 0 10px -2px black;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.tooltip-header{
+  margin: 0 !important;
+  padding: 5px;
+  padding-top: 15px;
+}
+
+.tooltip-subtitulo{
+  zoom:0.8;
+  padding-left: 1.5em;
+}
+
+.chartContainer{
+  border: 1px solid #c9c9c9;
+  border-radius:4px;
+}
+
+.chartHeader{
+  border: 1px solid #c9c9c9;
+  border-left: 0px; border-top:0px;
+}
+
+.chartHeaderItem{
+  border-bottom: 1px solid #c9c9c9;
+}
+
+/*lista de pasos Mobile*/
+.progreso-item{
+  margin-left: 0.15rem !important;
+  margin-right: 0.15rem !important;
+  padding-top: 0.15rem;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 24px;
+  height: 24px;
+}
+
+/* DASHBOARD PROGRESS CIRCLE */
+
+.progress-circle-alert.media .c100{
+  background-color: white;
+}
+
+.progress-circle-alert.media .c100:after{
+  background-color: #daf1f8;
+}
+
+.progress-circle-alert.media .c100 p{
+  font-size: 38px;
+  font-weight: bold;
+}
+
+.progress-circle-alert.media .media-body{
+  padding-top: 25px;
+}
+
+.progress-circle-alert.media .media-body h3{
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.progress-circle-alert.media .media-body p{
+  font-size: 1.7rem;
+}
+
+.progress-circle-alert.media .media-body button span{
+  vertical-align: middle;
+}
+.progress-circle-alert.media .media-body button i{
+  font-size: 1.8em;
+  vertical-align: middle;
+  margin-left: 15px;
+}
+
+/* DASHBOARD PANELS */
+
+.panel-heading {
+  min-height:auto !important;
+}
+
+.icon-panels .panel.panel-default{
+  min-height: 480px;
+}
+
+.icon-panels .panel.panel-default .panel-body{
+  min-height: 235px;
+}
+
+
+/* PROFILE PANELS */
+
+
+.profile-panel ul li{
+  list-style: none;
+  padding-top: 20px;
+}
+
+.table-item{
+  padding: 15px 0px;
+  margin: 0px 15px;
+  border-bottom: 1px solid #ccc;
+}
+
+.table-item .progress{
+  margin-top: 5px;
+}
+
+.table-item:last-child{
+  border-bottom: none;
+}
+
+/* FORMS STEP LIST & BUTTONS */
+
+.steps-list ul{
+  counter-reset: step;
+  list-style: none;
+}
+
+.steps-list ul li{
+  padding-bottom: 2em;
+  position: relative;
+}
+
+.steps-list ul li small{
+  padding-left: 30px;
+}
+
+.steps-list ul li:before{
+  font-weight: normal;
+  position: absolute;
+  top: 3px;
+  content: counter(step);
+  counter-increment: step;
+  font-size: 12px;
+  line-height: 20px;
+  width: 20px;
+  height: 20px;
+  background-color: #ABABAB;
+  color: #ffffff;
+  border-radius: 50%;
+  display: block;
+  text-align: center;
+}
+
+.steps-list ul li.active:before{
+  background-color: #717171;
+}
+
+.steps-list ul li.active{
+  font-weight: 600;
+}
+
+.steps-list ul li.done{
+  font-weight: 600;
+  color: #33b560;
+}
+
+.steps-list ul li.done:before{
+  font-family: FontAwesome;
+  content: "\f058";
+  font-size: 22px;
+  background-color: transparent;
+  color: #33b560;
+}
+
+.steps-list ul li.info{
+  font-weight: 600;
+  color: #0695d6;
+}
+
+.steps-list ul li.info:before{
+  font-family: FontAwesome;
+  content: "\f06a";
+  font-size: 22px;
+  background-color: transparent;
+  color: #0695d6;
+}
+
+.form-radar .btn-default{
+  font-size: 14px;
+  padding: 1em;
+  text-transform: none;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+@media screen and (max-width: 768px){
+  .form-radar .btn-default{
+    font-size: 12px;
+    padding: 0.5em;
+  }
+
+  .btn-group.form-radar{
+    display: block;
+  }
+  .btn-group.form-radar label.btn{
+    display: block;
+    width: 100%;
+    border: 0 !important;
+    margin-bottom: 2px;
+    margin-left: 0;
+    border-radius: 4px !important;
+    font-size: 14px;
+  }
+
+
+}
+
+@media screen and (max-width: 600px){
+  .form-radar .btn-default{
+    font-size: 10px;
+    padding: 0.5em;
+  }
+}
+
+
+@media (min-width: 1024px) {
+    .ayuda {
+        position: absolute;
+        bottom: 35;
+        right: -10;
+    }
+
+}
+
+@media (max-width: 1024px) {
+    .ayuda {
+        position: absolute;
+        bottom: 35;
+        right: 180;
+    }
+}
+/* Al agregarselo a un FontAwesome, junto con una clase de bg-color crea un recuadro redondeado al rededor del icono */
+.fa-label{
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.highcharts-container{
+  overflow: visible !important;
+}
