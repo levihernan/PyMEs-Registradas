@@ -1,0 +1,34 @@
+{
+  "provincias": [
+    {
+      "nombre": "Buenos Aires",
+      "pymesTotal": 4500,
+      "pymesRegistradas": 506,
+      "industriaPorc": 10,
+      "industriaTotal": 100,
+      "agroPorc": 20,
+      "agroTotal": 100,
+      "comercioPorc": 30,
+      "comercioTotal": 2500,
+      "servicioPorc": 100,
+      "servicioTotal": 3000,
+      "construccionPorc": 70,
+      "construccionTotal": 6
+    },
+    {
+      "nombre": "Córdoba",
+      "pymesTotal": 4500,
+      "pymesRegistradas": 506,
+      "industriaPorc": 10,
+      "industriaTotal": 100,
+      "agroPorc": 20,
+      "agroTotal": 100,
+      "comercioPorc": 30,
+      "comercioTotal": 2500,
+      "servicioPorc": 40,
+      "servicioTotal": 3000,
+      "construccionPorc": 70,
+      "construccionTotal": 6
+    }
+  ]
+}
