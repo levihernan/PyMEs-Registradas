@@ -1,4 +1,4 @@
-function drawHighcharts(id){
+function drawHighcharts(id) {
 
   dataHTML = "<div class='row'><div class='col-md-2 text-right'><h4>";
   dataHTML += jsonData.provincias[id].nombre;
@@ -6,11 +6,11 @@ function drawHighcharts(id){
   dataHTML += jsonData.provincias[id].pymesTotal;
   dataHTML += "</strong></p><p class='text-muted'>Registradas<br><strong>";
   dataHTML += jsonData.provincias[id].pymesRegistradas;
-  dataHTML += "</strong></p></div><div class='col-md-10'><div id='chart"+id+"' style='height: auto'></div></div></div>";
+  dataHTML += "</strong></p></div><div class='col-md-10'><div id='chart" + id + "' style='height: auto'></div></div></div>";
 
   $('#chartContainer').html(dataHTML);
 
-  Highcharts.chart('chart'+id, {
+  Highcharts.chart('chart' + id, {
     chart: {
       type: 'bar',
       height: 300
@@ -23,7 +23,7 @@ function drawHighcharts(id){
       enabled: false,
     },
     tooltip: {
-      enabled:false,
+      enabled: false,
     },
 
     xAxis: {
@@ -64,8 +64,7 @@ function drawHighcharts(id){
         }
       },
       series: {
-        pointPadding: 0.1,
-        groupPadding: 0,
+        pointWidth: 25,
         dataLabels: {
           allowOverlap: true,
           enabled: true,
@@ -74,11 +73,11 @@ function drawHighcharts(id){
           fontSize: '12px',
           formatter: function() {
             var icon = [];
-            icon[0] = '<p class="p-t-1">Industria y Minería: <strong>'+ this.y +'</strong>%<small class="text-muted"> de '+jsonData.provincias[id].industriaTotal+'</small></p>';
-            icon[45] = '<p class="p-t-1">Agropecuario: <strong>'+ this.y +'</strong>%<small class="text-muted"> de '+jsonData.provincias[id].agroTotal+'</small></p>';;
-            icon[90] = '<p class="p-t-1">Comercio: <strong>'+ this.y +'</strong>%<small class="text-muted"> de '+jsonData.provincias[id].comercioTotal+'</small></p>';;
-            icon[135] = '<p class="p-t-1">Servicio: <strong>'+ this.y +'</strong>%<small class="text-muted"> de '+jsonData.provincias[id].servicioTotal+'</small></p>';;
-            icon[180] = '<p class="p-t-1">Construcción: <strong>'+ this.y +'</strong>%<small class="text-muted"> de '+jsonData.provincias[id].construccionTotal+'</small></p>';;
+            icon[0] = '<p class="chart-label">Industria y Minería: <strong>' + this.y + '</strong>%<small class="text-muted"> de ' + jsonData.provincias[id].industriaTotal + '</small></p>';
+            icon[45] = '<p class="chart-label">Agropecuario: <strong>' + this.y + '</strong>%<small class="text-muted"> de ' + jsonData.provincias[id].agroTotal + '</small></p>';;
+            icon[90] = '<p class="chart-label">Comercio: <strong>' + this.y + '</strong>%<small class="text-muted"> de ' + jsonData.provincias[id].comercioTotal + '</small></p>';;
+            icon[135] = '<p class="chart-label">Servicio: <strong>' + this.y + '</strong>%<small class="text-muted"> de ' + jsonData.provincias[id].servicioTotal + '</small></p>';;
+            icon[180] = '<p class="chart-label">Construcción: <strong>' + this.y + '</strong>%<small class="text-muted"> de ' + jsonData.provincias[id].construccionTotal + '</small></p>';;
             return icon[this.x];
           },
         },
@@ -91,7 +90,7 @@ function drawHighcharts(id){
 
     series: [{
       type: 'column',
-      name: '4/20/2017',
+      name: 'Provincia',
       data: [jsonData.provincias[id].industriaPorc, jsonData.provincias[id].agroPorc, jsonData.provincias[id].comercioPorc, jsonData.provincias[id].servicioPorc, jsonData.provincias[id].construccionPorc]
     }]
   });

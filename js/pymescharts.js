@@ -12,7 +12,7 @@ $(document).ready(function() {
       enabled: false,
     },
     tooltip: {
-      enabled:false,
+      enabled: false,
     },
 
     xAxis: {
@@ -47,30 +47,28 @@ $(document).ready(function() {
 
     plotOptions: {
       bar: {
-        pointWidth: 10,
         dataLabels: {
           enabled: true
         }
       },
       series: {
-        pointPadding: 0.1,
-        groupPadding: 0,
+        pointWidth: 25,
         dataLabels: {
           allowOverlap: true,
-                enabled: true,
-                useHTML: true,
-                color: '#333',
-                fontSize: '12px',
-                formatter: function() {
-                  var icon = [];
-                  icon[0] = '<p class="p-t-1">Industria y Minería: '+ this.y +'%<small class="text-muted"> de #####</small></p>';
-                  icon[45] = '<p class="p-t-1">Agropecuario: '+ this.y +'%<small class="text-muted"> de #####</small></p>';;
-                  icon[90] = '<p class="p-t-1">Comercio: '+ this.y +'%<small class="text-muted"> de #####</small></p>';;
-                  icon[135] = '<p class="p-t-1">Servicio: '+ this.y +'%<small class="text-muted"> de #####</small></p>';;
-                  icon[180] = '<p class="p-t-1">Construcción: '+ this.y +'%<small class="text-muted"> de #####</small></p>';;
-                  return icon[this.x];
-                },
-            },
+          enabled: true,
+          useHTML: true,
+          color: '#333',
+          fontSize: '12px',
+          formatter: function() {
+            var icon = [];
+            icon[0] = '<p class="chart-label">Industria y Minería: ' + this.y + '%<small class="text-muted"> de #####</small></p>';
+            icon[45] = '<p class="chart-label">Agropecuario: ' + this.y + '%<small class="text-muted"> de #####</small></p>';;
+            icon[90] = '<p class="chart-label">Comercio: ' + this.y + '%<small class="text-muted"> de #####</small></p>';;
+            icon[135] = '<p class="chart-label">Servicio: ' + this.y + '%<small class="text-muted"> de #####</small></p>';;
+            icon[180] = '<p class="chart-label">Construcción: ' + this.y + '%<small class="text-muted"> de #####</small></p>';;
+            return icon[this.x];
+          },
+        },
         colorByPoint: true,
         pointStart: 0,
         pointInterval: 45,
@@ -80,7 +78,7 @@ $(document).ready(function() {
 
     series: [{
       type: 'column',
-      name: '4/20/2017',
+      name: 'Provincia',
       data: [10, 20, 33, 40, 50]
     }]
   });
