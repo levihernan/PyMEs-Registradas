@@ -2,15 +2,14 @@ $(document).ready(function() {
   Highcharts.chart('container', {
     chart: {
       type: 'bar',
-      height: 350
+      height: 300
     },
-
     title: {
       text: ''
     },
     colors: ['#2196F3', '#4CAF50', '#f44336', '#FFC107', '#FFEB3B'],
     legend: {
-      enabled: false
+      enabled: false,
     },
     tooltip: {
       enabled:false,
@@ -57,8 +56,11 @@ $(document).ready(function() {
         pointPadding: 0.1,
         groupPadding: 0,
         dataLabels: {
+          allowOverlap: true,
                 enabled: true,
                 useHTML: true,
+                color: '#333',
+                fontSize: '12px',
                 formatter: function() {
                   var icon = [];
                   icon[0] = '<p class="p-t-1">Industria y Minería: '+ this.y +'%<small class="text-muted"> de #####</small></p>';
