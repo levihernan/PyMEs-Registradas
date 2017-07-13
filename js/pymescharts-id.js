@@ -1,6 +1,6 @@
 function drawHighcharts(id) {
 
-  dataHTML = "<div class='row'><div class='col-md-2 text-right'><h4>";
+  dataHTML = "<div class='row p-t-2'><div class='col-md-2 text-right'><h4>";
   dataHTML += jsonData.provincias[id].nombre;
   dataHTML += "</h4><p class='text-muted'>PyMEs Total<br><strong>";
   dataHTML += jsonData.provincias[id].pymesTotal;
