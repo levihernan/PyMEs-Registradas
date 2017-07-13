@@ -79,14 +79,14 @@ function drawHighcharts(id) {
           enabled: true,
           useHTML: true,
           color: '#333',
-          fontSize: '12px',
+          fontSize: '10px',
           formatter: function() {
             var icon = [];
-            icon[0] = '<p class="chart-label">Industria y Minería: <strong>' + this.y + '</strong>%<small class="text-muted"> ('+jsonData.provincias[id].industriaReg + ' de ' + jsonData.provincias[id].industriaTotal + ')</small></p>';
-            icon[45] = '<p class="chart-label">Agropecuario: <strong>' + this.y + '</strong>%<small class="text-muted"> ('+jsonData.provincias[id].agroReg + ' de ' + jsonData.provincias[id].agroTotal + ')</small></p>';;
-            icon[90] = '<p class="chart-label">Comercio: <strong>' + this.y + '</strong>%<small class="text-muted"> ('+jsonData.provincias[id].comercioReg + ' de ' + jsonData.provincias[id].comercioTotal + ')</small></p>';;
-            icon[135] = '<p class="chart-label">Servicio: <strong>' + this.y + '</strong>%<small class="text-muted"> ('+jsonData.provincias[id].servicioReg + ' de ' + jsonData.provincias[id].servicioTotal + ')</small></p>';;
-            icon[180] = '<p class="chart-label">Construcción: <strong>' + this.y + '</strong>%<small class="text-muted"> ('+jsonData.provincias[id].construccionReg +' de ' + jsonData.provincias[id].construccionTotal + ')</small></p>';;
+            icon[0] = '<p class="chart-label">Industria y Minería: <strong>' + this.y.toFixed(1) + '</strong>%<small class="text-muted"> | '+jsonData.provincias[id].industriaReg + ' de ' + jsonData.provincias[id].industriaTotal + '</small></p>';
+            icon[45] = '<p class="chart-label">Agropecuario: <strong>' + this.y.toFixed(1) + '</strong>%<small class="text-muted"> | '+jsonData.provincias[id].agroReg + ' de ' + jsonData.provincias[id].agroTotal + '</small></p>';
+            icon[90] = '<p class="chart-label">Comercio: <strong>' + this.y.toFixed(1) + '</strong>%<small class="text-muted"> | '+jsonData.provincias[id].comercioReg + ' de ' + jsonData.provincias[id].comercioTotal + '</small></p>';
+            icon[135] = '<p class="chart-label">Servicio: <strong>' + this.y.toFixed(1) + '</strong>%<small class="text-muted"> | '+jsonData.provincias[id].servicioReg + ' de ' + jsonData.provincias[id].servicioTotal + '</small></p>';
+            icon[180] = '<p class="chart-label">Construcción: <strong>' + this.y.toFixed(1) + '</strong>%<small class="text-muted"> | '+jsonData.provincias[id].construccionReg +' de ' + jsonData.provincias[id].construccionTotal + '</small></p>';
             return icon[this.x];
           },
         },

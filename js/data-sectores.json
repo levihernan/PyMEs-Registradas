@@ -13,7 +13,7 @@
       "servicioReg": 100,
       "servicioTotal": 3000,
       "construccionReg": 70,
-      "construccionTotal": 6
+      "construccionTotal": 62134
     },
     {
       "nombre": "Córdoba",
@@ -28,7 +28,7 @@
       "servicioReg": 40,
       "servicioTotal": 3000,
       "construccionReg": 70,
-      "construccionTotal": 6
+      "construccionTotal": 6234
     },
     {
       "nombre": "Río Negro",
@@ -161,9 +161,9 @@
       "comercioReg": 30,
       "comercioTotal": 2500,
       "servicioReg": 40,
-      "servicioTotal": 3000,
+      "servicioTotal": 3500,
       "construccionReg": 70,
-      "construccionTotal": 6
+      "construccionTotal": 676453
     },
     {
       "nombre": "Neuquén",
@@ -178,7 +178,7 @@
       "servicioReg": 40,
       "servicioTotal": 3000,
       "construccionReg": 70,
-      "construccionTotal": 6
+      "construccionTotal": 612345
     }
   ]
 }
