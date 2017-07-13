@@ -57,7 +57,7 @@ function drawHighcharts(id) {
   Highcharts.chart('chart' + id, {
     chart: {
       type: 'bar',
-      height: 300
+      height: 250
     },
     title: {
       text: ''
