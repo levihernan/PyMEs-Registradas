@@ -58,7 +58,7 @@ function drawHighcharts(id) {
       min: 0,
       max: 100,
       title: {
-        text: 'Porcentaje de PyMEs registradas'
+        text: null
       },
       labels: {
         formatter: function() {
