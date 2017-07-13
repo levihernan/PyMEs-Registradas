@@ -82,11 +82,11 @@ function drawHighcharts(id) {
           fontSize: '12px',
           formatter: function() {
             var icon = [];
-            icon[0] = '<p class="chart-label">Industria y Minería: <strong>' + this.y + '</strong>%<small class="text-muted"> ('+jsonData.provincias[id].industriaPorc*jsonData.provincias[id].industriaTotal/100+' de ' + jsonData.provincias[id].industriaTotal + ')</small></p>';
-            icon[45] = '<p class="chart-label">Agropecuario: <strong>' + this.y + '</strong>%<small class="text-muted"> ('+jsonData.provincias[id].agroPorc*jsonData.provincias[id].agroTotal/100+' de ' + jsonData.provincias[id].agroTotal + ')</small></p>';;
-            icon[90] = '<p class="chart-label">Comercio: <strong>' + this.y + '</strong>%<small class="text-muted"> ('+jsonData.provincias[id].comercioPorc*jsonData.provincias[id].comercioTotal/100+' de ' + jsonData.provincias[id].comercioTotal + ')</small></p>';;
-            icon[135] = '<p class="chart-label">Servicio: <strong>' + this.y + '</strong>%<small class="text-muted"> ('+jsonData.provincias[id].servicioPorc*jsonData.provincias[id].servicioTotal/100+' de ' + jsonData.provincias[id].servicioTotal + ')</small></p>';;
-            icon[180] = '<p class="chart-label">Construcción: <strong>' + this.y + '</strong>%<small class="text-muted"> ('+jsonData.provincias[id].construccionPorc*jsonData.provincias[id].construccionTotal/100+' de ' + jsonData.provincias[id].construccionTotal + ')</small></p>';;
+            icon[0] = '<p class="chart-label">Industria y Minería: <strong>' + this.y + '</strong>%<small class="text-muted"> ('+jsonData.provincias[id].industriaReg + ' de ' + jsonData.provincias[id].industriaTotal + ')</small></p>';
+            icon[45] = '<p class="chart-label">Agropecuario: <strong>' + this.y + '</strong>%<small class="text-muted"> ('+jsonData.provincias[id].agroReg + ' de ' + jsonData.provincias[id].agroTotal + ')</small></p>';;
+            icon[90] = '<p class="chart-label">Comercio: <strong>' + this.y + '</strong>%<small class="text-muted"> ('+jsonData.provincias[id].comercioReg + ' de ' + jsonData.provincias[id].comercioTotal + ')</small></p>';;
+            icon[135] = '<p class="chart-label">Servicio: <strong>' + this.y + '</strong>%<small class="text-muted"> ('+jsonData.provincias[id].servicioReg + ' de ' + jsonData.provincias[id].servicioTotal + ')</small></p>';;
+            icon[180] = '<p class="chart-label">Construcción: <strong>' + this.y + '</strong>%<small class="text-muted"> ('+jsonData.provincias[id].construccionReg +' de ' + jsonData.provincias[id].construccionTotal + ')</small></p>';;
             return icon[this.x];
           },
         },
@@ -100,7 +100,7 @@ function drawHighcharts(id) {
     series: [{
       type: 'column',
       name: 'Provincia',
-      data: [jsonData.provincias[id].industriaPorc, jsonData.provincias[id].agroPorc, jsonData.provincias[id].comercioPorc, jsonData.provincias[id].servicioPorc, jsonData.provincias[id].construccionPorc]
+      data: [jsonData.provincias[id].industriaReg/jsonData.provincias[id].industriaTotal*100, jsonData.provincias[id].agroReg/jsonData.provincias[id].agroTotal*100, jsonData.provincias[id].comercioReg/jsonData.provincias[id].comercioTotal*100, jsonData.provincias[id].servicioReg/jsonData.provincias[id].servicioTotal*100, jsonData.provincias[id].construccionReg/jsonData.provincias[id].construccionTotal*100]
     }]
   });
 };
