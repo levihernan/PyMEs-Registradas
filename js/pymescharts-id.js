@@ -1,30 +1,35 @@
 $('#cuyo').click(function () {
   drawRegion([3,1,5]);
-  $('a').removeClass("active btn-primary");
+  $(".chartbtns").removeClass("btn-primary btn-link");
+  $(".chartbtns").addClass("btn-link");
   $('#cuyo').removeClass("btn-link").addClass("btn-primary");
  });
 
  $('#noreste').click(function () {
    drawRegion([6,7,8]);
-   $('a').removeClass("active btn-primary");
+   $(".chartbtns").removeClass("btn-primary btn-link");
+   $(".chartbtns").addClass("btn-link");
    $('#noreste').removeClass("btn-link").addClass("btn-primary");
   });
 
   $('#noroeste').click(function () {
     drawRegion([4,2,0]);
-    $('a').removeClass("active btn-primary");
+    $(".chartbtns").removeClass("btn-primary btn-link");
+    $(".chartbtns").addClass("btn-link");
     $('#noroeste').removeClass("btn-link").addClass("btn-primary");
    });
 
    $('#pampeana').click(function () {
      drawRegion([9,10,11]);
-     $('a').removeClass("active btn-primary");
+     $(".chartbtns").removeClass("btn-primary btn-link");
+     $(".chartbtns").addClass("btn-link");
      $('#pampeana').removeClass("btn-link").addClass("btn-primary");
     });
 
     $('#patagonia').click(function () {
       drawRegion([0,2,4]);
-      $('a').removeClass("active btn-primary");
+      $(".chartbtns").removeClass("btn-primary btn-link");
+      $(".chartbtns").addClass("btn-link");
       $('#patagonia').removeClass("btn-link").addClass("btn-primary");
      });
 
