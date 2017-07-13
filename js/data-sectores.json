@@ -13,7 +13,7 @@
       "servicioReg": 100,
       "servicioTotal": 3000,
       "construccionReg": 70,
-      "construccionTotal": 62134
+      "construccionTotal": 612
     },
     {
       "nombre": "Córdoba",
@@ -28,7 +28,7 @@
       "servicioReg": 40,
       "servicioTotal": 3000,
       "construccionReg": 70,
-      "construccionTotal": 6234
+      "construccionTotal": 612
     },
     {
       "nombre": "Río Negro",
@@ -43,7 +43,7 @@
       "servicioReg": 40,
       "servicioTotal": 300,
       "construccionReg": 70,
-      "construccionTotal": 6
+      "construccionTotal": 612
     },
     {
       "nombre": "Catamarca",
@@ -58,7 +58,7 @@
       "servicioReg": 40,
       "servicioTotal": 3000,
       "construccionReg": 70,
-      "construccionTotal": 6
+      "construccionTotal": 612
     },
     {
       "nombre": "Santa Cruz",
@@ -73,7 +73,7 @@
       "servicioReg": 40,
       "servicioTotal": 3000,
       "construccionReg": 70,
-      "construccionTotal": 6
+      "construccionTotal": 612
     },
     {
       "nombre": "Tierra del Fuego",
@@ -88,7 +88,7 @@
       "servicioReg": 40,
       "servicioTotal": 3000,
       "construccionReg": 70,
-      "construccionTotal": 6
+      "construccionTotal": 612
     },
     {
       "nombre": "San Luis",
@@ -103,7 +103,7 @@
       "servicioReg": 40,
       "servicioTotal": 3000,
       "construccionReg": 70,
-      "construccionTotal": 6
+      "construccionTotal": 612
     },
     {
       "nombre": "La Rioja",
@@ -118,7 +118,7 @@
       "servicioReg": 40,
       "servicioTotal": 3000,
       "construccionReg": 70,
-      "construccionTotal": 6
+      "construccionTotal": 612
     },
     {
       "nombre": "Misiones",
@@ -133,7 +133,7 @@
       "servicioReg": 40,
       "servicioTotal": 3000,
       "construccionReg": 70,
-      "construccionTotal": 6
+      "construccionTotal": 612
     },
     {
       "nombre": "Chubut",
@@ -148,7 +148,7 @@
       "servicioReg": 40,
       "servicioTotal": 3000,
       "construccionReg": 70,
-      "construccionTotal": 6
+      "construccionTotal": 612
     },
     {
       "nombre": "Chaco",
@@ -163,7 +163,7 @@
       "servicioReg": 40,
       "servicioTotal": 3500,
       "construccionReg": 70,
-      "construccionTotal": 676453
+      "construccionTotal": 6127
     },
     {
       "nombre": "Neuquén",
@@ -178,7 +178,7 @@
       "servicioReg": 40,
       "servicioTotal": 3000,
       "construccionReg": 70,
-      "construccionTotal": 612345
+      "construccionTotal": 613
     }
   ]
 }

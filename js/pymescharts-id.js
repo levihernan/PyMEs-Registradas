@@ -59,8 +59,13 @@ function drawHighcharts(id) {
       max: 100,
       title: {
         text: 'Porcentaje de PyMEs registradas'
-      }
-    },
+      },
+      labels: {
+        formatter: function() {
+            return this.value + "%"
+          }
+        }
+      },
     credits: {
       enabled: false
     },
