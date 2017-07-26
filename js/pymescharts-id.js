@@ -62,7 +62,7 @@ function drawHighcharts(id) {
     title: {
       text: ''
     },
-    colors: ['#2196F3', '#4CAF50', '#f44336', '#FFC107', '#FFEB3B'],
+    colors: ['#2196F3', '#4CAF50', '#f44336', '#FFC107', '#FFEB3B', '#000000'],
     legend: {
       enabled: false,
     },
@@ -73,7 +73,7 @@ function drawHighcharts(id) {
     xAxis: {
       tickInterval: 45,
       min: 0,
-      max: 180,
+      max: 225,
       labels: {
         useHTML: true,
         formatter: function() {
@@ -84,6 +84,8 @@ function drawHighcharts(id) {
           icon[90] = '<h1><i class="fa fa-ship" style="color: #f44336"></i></h1>';
           icon[135] = '<h1><i class="fa fa-signal" style="color: #FFC107"></i></h1>';
           icon[180] = '<h1><i class="fa fa-gears" style="color: #FFEB3B"></i></h1>';
+          icon[225] = '<h1><i class="fa fa-gears" style="color: #000000"></i></h1>';
+
           return icon[this.value];
         },
       }
@@ -122,11 +124,12 @@ function drawHighcharts(id) {
           fontSize: '10px',
           formatter: function() {
             var icon = [];
-            icon[0] = '<p class="chart-label">Industria y Minería: <strong>' + this.y.toFixed(1) + '</strong>%<small class="text-muted"> | '+jsonData.provincias[id].industriaReg + ' de ' + jsonData.provincias[id].industriaTotal + '</small></p>';
+            icon[0] = '<p class="chart-label">Industria: <strong>' + this.y.toFixed(1) + '</strong>%<small class="text-muted"> | '+jsonData.provincias[id].industriaReg + ' de ' + jsonData.provincias[id].industriaTotal + '</small></p>';
             icon[45] = '<p class="chart-label">Agropecuario: <strong>' + this.y.toFixed(1) + '</strong>%<small class="text-muted"> | '+jsonData.provincias[id].agroReg + ' de ' + jsonData.provincias[id].agroTotal + '</small></p>';
             icon[90] = '<p class="chart-label">Comercio: <strong>' + this.y.toFixed(1) + '</strong>%<small class="text-muted"> | '+jsonData.provincias[id].comercioReg + ' de ' + jsonData.provincias[id].comercioTotal + '</small></p>';
             icon[135] = '<p class="chart-label">Servicio: <strong>' + this.y.toFixed(1) + '</strong>%<small class="text-muted"> | '+jsonData.provincias[id].servicioReg + ' de ' + jsonData.provincias[id].servicioTotal + '</small></p>';
             icon[180] = '<p class="chart-label">Construcción: <strong>' + this.y.toFixed(1) + '</strong>%<small class="text-muted"> | '+jsonData.provincias[id].construccionReg +' de ' + jsonData.provincias[id].construccionTotal + '</small></p>';
+            icon[225] = '<p class="chart-label">Minería: <strong>' + this.y.toFixed(1) + '</strong>%<small class="text-muted"> | '+jsonData.provincias[id].mineriaReg +' de ' + jsonData.provincias[id].mineriaTotal + '</small></p>';
             return icon[this.x];
           },
         },
@@ -140,7 +143,7 @@ function drawHighcharts(id) {
     series: [{
       type: 'column',
       name: 'Provincia',
-      data: [jsonData.provincias[id].industriaReg/jsonData.provincias[id].industriaTotal*100, jsonData.provincias[id].agroReg/jsonData.provincias[id].agroTotal*100, jsonData.provincias[id].comercioReg/jsonData.provincias[id].comercioTotal*100, jsonData.provincias[id].servicioReg/jsonData.provincias[id].servicioTotal*100, jsonData.provincias[id].construccionReg/jsonData.provincias[id].construccionTotal*100]
+      data: [jsonData.provincias[id].industriaReg/jsonData.provincias[id].industriaTotal*100, jsonData.provincias[id].agroReg/jsonData.provincias[id].agroTotal*100, jsonData.provincias[id].comercioReg/jsonData.provincias[id].comercioTotal*100, jsonData.provincias[id].servicioReg/jsonData.provincias[id].servicioTotal*100, jsonData.provincias[id].construccionReg/jsonData.provincias[id].construccionTotal*100, jsonData.provincias[id].mineriaReg/jsonData.provincias[id].mineriaTotal*100]
     }]
   });
 };
