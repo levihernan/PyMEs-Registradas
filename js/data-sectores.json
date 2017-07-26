@@ -119,20 +119,23 @@
        "mineriaReg": 3,
       "mineriaTotal": 26  
     },
-    {
+    
+     {
       "nombre": "Río Negro",
-      "pymesTotal": 450,
+      "pymesTotal": 14842  ,
       "pymesRegistradas": 3656,
       "industriaReg": 217,
-      "industriaTotal": 100,
+      "industriaTotal": 817  ,
       "agroReg": 407,
-      "agroTotal": 10,
+      "agroTotal": 1897  ,
       "comercioReg": 1165,
-      "comercioTotal": 200,
+      "comercioTotal": 5120  ,
       "servicioReg": 1703,
-      "servicioTotal": 300,
+      "servicioTotal": 6259  ,
       "construccionReg": 143,
-      "construccionTotal": 612
+      "construccionTotal": 681  ,
+       "mineriaReg": 21,
+      "mineriaTotal": 68  
     },
     {
       "nombre": "Catamarca",
@@ -388,23 +391,6 @@
       "construccionTotal": 817  ,
        "mineriaReg": 44,
       "mineriaTotal": 169  
-    },
-     {
-      "nombre": "Rio Negro",
-      "pymesTotal": 14842  ,
-      "pymesRegistradas": 3656,
-      "industriaReg": 217,
-      "industriaTotal": 817  ,
-      "agroReg": 407,
-      "agroTotal": 1897  ,
-      "comercioReg": 1165,
-      "comercioTotal": 5120  ,
-      "servicioReg": 1703,
-      "servicioTotal": 6259  ,
-      "construccionReg": 143,
-      "construccionTotal": 681  ,
-       "mineriaReg": 21,
-      "mineriaTotal": 68  
     },
     {
       "nombre": "Salta",
