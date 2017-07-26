@@ -42,7 +42,7 @@ function drawHighcharts(id) {
   dataHTML += "</strong></p><p class='text-muted'>Registradas<br><strong>";
   dataHTML += jsonData.provincias[id].pymesRegistradas;
   dataHTML += "</strong></p>";
-  dataHTML += "<button class='btn btn-primary btn-xs collapsed' data-toggle='collapse' data-target='#masInfo"+id+"' aria-expanded='false'>Ver Más Info</button>";
+  // dataHTML += "<button class='btn btn-primary btn-xs collapsed' data-toggle='collapse' data-target='#masInfo"+id+"' aria-expanded='false'>Ver Más Info</button>";
   dataHTML += "</div><div class='col-md-10'><div id='chart" + id + "' style='height: auto'></div></div>";
   dataHTML += "<div class='col-md-10 col-md-offset-2'><div class='row collapse chart-masinfo' id='masInfo"+id+"'><div class='col-md-12 bg-primary'><h5 class='m-y-2 m-x-1'>Detalles de Provincia <a href='javascript:undefined' data-toggle='collapse' data-target='#masInfo"+id+"'><i class='fa fa-close pull-right'></i></a></h5></div><div class='col-md-12'>";
   dataHTML += "<div class='col-md-3 text-center'><i class='fa fa-user text-primary fa-4x m-y-2'></i><p class='text-muted m-b-0'><strong>Dato Number</strong></p><p>00.000.000</p></div>";
