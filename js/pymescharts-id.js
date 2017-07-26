@@ -84,7 +84,7 @@ function drawHighcharts(id) {
           icon[90] = '<h1><i class="fa fa-ship" style="color: #f44336"></i></h1>';
           icon[135] = '<h1><i class="fa fa-signal" style="color: #FFC107"></i></h1>';
           icon[180] = '<h1><i class="fa fa-gears" style="color: #FFEB3B"></i></h1>';
-          icon[225] = '<h1><i class="fa fa-gears" style="color: #000000"></i></h1>';
+          icon[225] = '<h1><i class="fa fa-first-order" style="color: #000000"></i></h1>';
 
           return icon[this.value];
         },
