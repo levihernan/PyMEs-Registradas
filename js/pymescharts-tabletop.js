@@ -159,7 +159,7 @@ function drawRegion(array){
 function drawDatos(universo,vigentes,totales){
   var porcVigentes = vigentes/universo*100;
   var porcTotales = totales/universo*100;
-  $('#universoPyme').html('<h1>' + universo + '</h1><p>Universo PyME</p>');
-  $('#pymesVigentes').html('<h1>' + vigentes + '<span class="thin">/' + porcVigentes.toFixed(1) + '%</span></h1><p>PyMEs registradas vigentes</p>');
-  $('#pymesTotales').html('<h1>' + totales + '<span class="thin">/' + porcTotales.toFixed(1) + '%</span></h1><p>PyMEs registradas totales</p>');
+  $('#universoPyme').html('<h1>' + Number(universo).toLocaleString() + '</h1><p>Universo PyME</p>');
+  $('#pymesVigentes').html('<h1>' + Number(vigentes).toLocaleString() + '<span class="thin">/' + porcVigentes.toFixed(1) + '%</span></h1><p>PyMEs registradas vigentes</p>');
+  $('#pymesTotales').html('<h1>' + Number(totales).toLocaleString() + '<span class="thin">/' + porcTotales.toFixed(1) + '%</span></h1><p>PyMEs registradas totales</p>');
 }
