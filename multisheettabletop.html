@@ -1,0 +1,40 @@
+<h1>This is actually working</h1>
+<h2>Press [Command] + [Option] + [' i ']</h2>
+<p>If you're on a mac, to open the console and see the console.log()</p>
+<p>You should be able to see one large object of ~67 objects coming from the google spreadsheet, and two arrays being displayed with two different versions of the column headers</p>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/poncho.min.css">
+<link rel="stylesheet" href="/css/font-awesome.css">
+<script type="text/javascript" src="js/tabletop.js"></script>
+<script type="text/javascript">
+  window.onload = function() { init() };
+
+  var mapKey = "0Arx6eO5Sf52fdDd5dFJjd3d4UEkxOHNuQnN6UnlEZkE";
+
+  var ds = new Miso.Dataset({
+    importer : Miso.Dataset.Importers.GoogleSpreadsheet,
+    parser : Miso.Dataset.Parsers.GoogleSpreadsheet,
+    key : mapKey,
+    worksheet : "1"
+  });
+
+  function init() {
+    Tabletop.init( { key: mapKey,
+                     callback: showInfo,
+                     simpleSheet: true } );
+  }
+
+  function showInfo(data, tabletop) {
+    console.log(data);
+    console.log(tabletop.sheets('Sheet1').column_names);
+    ds.fetch({
+      success : function() {
+        console.log(ds.columnNames());
+      },
+      error : function() {
+        console.log("Are you sure you are connected to the internet?");
+      }
+    });
+  }
+</script>
