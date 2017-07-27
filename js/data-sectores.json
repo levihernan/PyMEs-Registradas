@@ -15,10 +15,10 @@
       "construccionReg": 3336,
       "construccionTotal":14686  ,
       "mineriaReg": 63,
-      "mineriaTotal": 178  
+      "mineriaTotal": 178
     },
      {
-      "nombre": "Caba",
+      "nombre": "CABA",
       "pymesTotal": 200148  ,
       "pymesRegistradas": 95451,
       "industriaReg": 7106,
@@ -32,7 +32,7 @@
       "construccionReg": 2384,
       "construccionTotal": 9407  ,
        "mineriaReg": 51,
-      "mineriaTotal": 376  
+      "mineriaTotal": 376
     },
     {
       "nombre": "Córdoba",
@@ -49,7 +49,7 @@
       "construccionReg": 1009,
       "construccionTotal": 3136  ,
        "mineriaReg":53,
-      "mineriaTotal": 173  
+      "mineriaTotal": 173
     },
     {
       "nombre": "Corrientes",
@@ -66,7 +66,7 @@
       "construccionReg": 145,
       "construccionTotal": 595  ,
        "mineriaReg": 9,
-      "mineriaTotal": 19  
+      "mineriaTotal": 19
     },
      {
       "nombre": "Entre Rios",
@@ -83,7 +83,7 @@
       "construccionReg": 327,
       "construccionTotal": 887  ,
        "mineriaReg": 20,
-      "mineriaTotal": 48  
+      "mineriaTotal": 48
     },
     {
       "nombre": "Formosa",
@@ -100,7 +100,7 @@
       "construccionReg": 82,
       "construccionTotal": 255  ,
        "mineriaReg": 3,
-      "mineriaTotal": 5  
+      "mineriaTotal": 5
     },
      {
       "nombre": "Jujuy",
@@ -117,9 +117,9 @@
       "construccionReg": 31,
       "construccionTotal": 259  ,
        "mineriaReg": 3,
-      "mineriaTotal": 26  
+      "mineriaTotal": 26
     },
-    
+
      {
       "nombre": "Río Negro",
       "pymesTotal": 14842  ,
@@ -135,7 +135,7 @@
       "construccionReg": 143,
       "construccionTotal": 681  ,
        "mineriaReg": 21,
-      "mineriaTotal": 68  
+      "mineriaTotal": 68
     },
     {
       "nombre": "Catamarca",
@@ -152,7 +152,7 @@
       "construccionReg": 46,
       "construccionTotal": 229  ,
        "mineriaReg": 6,
-      "mineriaTotal": 13  
+      "mineriaTotal": 13
     },
     {
       "nombre": "Santa Cruz",
@@ -169,7 +169,7 @@
       "construccionReg": 56,
       "construccionTotal": 276  ,
        "mineriaReg": 8,
-      "mineriaTotal": 70  
+      "mineriaTotal": 70
     },
     {
       "nombre": "Santa Fe",
@@ -186,7 +186,7 @@
       "construccionReg": 1205,
       "construccionTotal": 3169  ,
        "mineriaReg": 20,
-      "mineriaTotal": 39  
+      "mineriaTotal": 39
     },
       {
       "nombre": "Santiago del Estero",
@@ -203,7 +203,7 @@
       "construccionReg": 68,
       "construccionTotal": 507  ,
        "mineriaReg": 3,
-      "mineriaTotal": 20  
+      "mineriaTotal": 20
     },
     {
       "nombre": "Tierra del Fuego",
@@ -220,7 +220,7 @@
       "construccionReg": 14,
       "construccionTotal": 373  ,
        "mineriaReg": 1,
-      "mineriaTotal": 11  
+      "mineriaTotal": 11
     },
      {
       "nombre": "Tucuman",
@@ -237,7 +237,7 @@
       "construccionReg": 145,
       "construccionTotal": 990  ,
        "mineriaReg": 4,
-      "mineriaTotal": 15  
+      "mineriaTotal": 15
     },
      {
       "nombre": "San Juan",
@@ -254,7 +254,7 @@
       "construccionReg": 85,
       "construccionTotal": 628  ,
        "mineriaReg": 16,
-      "mineriaTotal": 90  
+      "mineriaTotal": 90
     },
     {
       "nombre": "San Luis",
@@ -271,7 +271,7 @@
       "construccionReg": 120,
       "construccionTotal": 506  ,
        "mineriaReg": 16,
-      "mineriaTotal": 51  
+      "mineriaTotal": 51
     },
       {
       "nombre": "La Pampa",
@@ -288,7 +288,7 @@
       "construccionReg": 102,
       "construccionTotal": 248  ,
        "mineriaReg": 5,
-      "mineriaTotal": 19  
+      "mineriaTotal": 19
     },
     {
       "nombre": "La Rioja",
@@ -305,7 +305,7 @@
       "construccionReg": 13,
       "construccionTotal": 188  ,
        "mineriaReg": 0,
-      "mineriaTotal": 12  
+      "mineriaTotal": 12
     },
      {
       "nombre": "Mendoza",
@@ -322,7 +322,7 @@
       "construccionReg": 467,
       "construccionTotal": 1721  ,
        "mineriaReg": 33,
-      "mineriaTotal": 121  
+      "mineriaTotal": 121
     },
     {
       "nombre": "Misiones",
@@ -339,7 +339,7 @@
       "construccionReg": 133,
       "construccionTotal": 697  ,
        "mineriaReg": 8,
-      "mineriaTotal": 38  
+      "mineriaTotal": 38
     },
     {
       "nombre": "Chubut",
@@ -356,7 +356,7 @@
       "construccionReg": 144,
       "construccionTotal": 730  ,
        "mineriaReg": 33,
-      "mineriaTotal": 151  
+      "mineriaTotal": 151
     },
     {
       "nombre": "Chaco",
@@ -373,7 +373,7 @@
       "construccionReg": 112,
       "construccionTotal": 605  ,
        "mineriaReg": 1,
-      "mineriaTotal": 5  
+      "mineriaTotal": 5
     },
     {
       "nombre": "Neuquén",
@@ -390,7 +390,7 @@
       "construccionReg": 203,
       "construccionTotal": 817  ,
        "mineriaReg": 44,
-      "mineriaTotal": 169  
+      "mineriaTotal": 169
     },
     {
       "nombre": "Salta",
@@ -407,7 +407,7 @@
       "construccionReg": 143,
       "construccionTotal": 714  ,
        "mineriaReg": 27,
-      "mineriaTotal": 96  
+      "mineriaTotal": 96
     }
   ]
 }
